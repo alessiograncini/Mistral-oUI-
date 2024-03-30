@@ -1,0 +1,11 @@
+{
+    "title": "Comprehensive Guide to Augmented Reality Development with MagicLeap",
+    "chapters": [
+        {
+            "chapterTitle": "Advanced AR Features and Best Practices",
+            "content": "As you progress in your AR development journey, it's important to explore advanced features like 6DoF tracking, occlusion, and physics simulations. This chapter not only covers these advanced topics but also discusses best practices for optimizing performance and enhancing user experience.",
+            "codeExample": "public void Enable6DoFTracking() {\n    // Code to enable 6 Degrees of Freedom tracking\n}"
+        }
+    ]
+}
+
