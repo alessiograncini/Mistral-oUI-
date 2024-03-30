@@ -20,5 +20,5 @@ curl -X POST "http://localhost:8000/upload-image/" -F "file=@path/to/your/dummy/
 # How to run unity 
 
 Please use Unity 2023.2.2f1
-Build the scene named "Mistral" 
+Build the scene named "MistralSDK" 
 Or install the .APK in the build folder 
