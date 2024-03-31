@@ -6,7 +6,7 @@ authors = ["Rahul Tarak <cryogenicplanet@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 opencv-python-headless = "4.9.0.80"
 uvicorn = "0.15.0"
 Pillow = "^8.3.1"

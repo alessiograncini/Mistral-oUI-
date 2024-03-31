@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.magicleap.spectator": {
+      "version": "file:/Users/alessiograncini/MagicLeap/tools/unity/Magic Leap Spectator/v1.3.3/com.magicleap.spectator-v1.3.3.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.magicleap.unitysdk": "1.3.0",
+        "com.unity.render-pipelines.universal": "12.0.0"
+      }
+    },
     "com.magicleap.unitysdk": {
       "version": "1.12.0",
       "depth": 0,

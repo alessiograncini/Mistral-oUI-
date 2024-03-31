@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.magicleap.spectator": "file:/Users/alessiograncini/MagicLeap/tools/unity/Magic Leap Spectator/v1.3.3/com.magicleap.spectator-v1.3.3.tgz",
     "com.magicleap.unitysdk": "1.12.0",
     "com.unity.collab-proxy": "2.2.0",
     "com.unity.ide.rider": "3.0.26",
