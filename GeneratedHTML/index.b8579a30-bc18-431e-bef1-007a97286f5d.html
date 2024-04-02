@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<div class="w-11/12 sm:w-3/4 lg:w-1/2 xl:w-2/5 h-3/4 bg-black bg-opacity-75 shadow-2xl rounded-lg p-6">
+  <div class="flex flex-col h-full">
+    <div class="flex-1">
+      <h2 class="text-white text-2xl mb-4">Task Manager</h2>
+      <div class="flex flex-col h-full">
+        <div class="flex-1 overflow-y-auto">
+          <!-- Task List -->
+          <div class="mb-2 bg-gray-800 rounded p-2">
+            <div class="flex justify-between items-center">
+              <p class="text-white">Task 1</p>
+              <button class="text-green-500 focus:outline-none">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- Add more tasks -->
+        </div>
+        <div class="mt-2">
+          <button class="bg-gray-800 text-white px-4 py-2 rounded flex items-center focus:outline-none">
+            <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+            Add Task
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex-none mt-4 h-16 flex items-center justify-between">
+      <div class="flex items-center">
+        <!-- Productivity Tools -->
+        <button class="bg-gray-800 text-white p-2 rounded mr-2 focus:outline-none">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </button>
+        <button class="bg-gray-800 text-white p-2 rounded mr-2 focus:outline-none">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+        </button>
+        <button class="bg-gray-800 text-white p-2 rounded mr-2 focus:outline-none">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center">
+        <!-- Device Controls -->
+        <div class="w-20 mr-2">
+          <input class="w-full bg-gray-800 h-2 rounded focus:outline-none" type="range" min="0" max="100" value="50">
+        </div>
+        <div class="w-20 mr-2">
+          <input class="w-full bg-gray-800 h-2 rounded focus:outline-none" type="range" min="0" max="100" value="50">
+        </div>
+        <button class="bg-gray-800 text-white p-2 rounded focus:outline-none">
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="flex-none h-16 flex items-center justify-between mt-2">
+      <div class="flex items-center text-white">
+        <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="text-lg">12:00 PM</p>
+      </div>
+      <div class="flex items-center text-white">
+        <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+        </svg>
+        <p class="text-lg">75°F</p>
+      </div>
+      <div class="h-10 w-48 rounded bg-gray-800 overflow-hidden flex items-center">
+        <marquee class="text-white text-lg px-2">Breaking news headline...</marquee>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+
+</html>

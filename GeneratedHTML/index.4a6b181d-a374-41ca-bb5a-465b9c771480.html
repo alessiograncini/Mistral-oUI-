@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<div class="flex flex-row items-center justify-center space-x-4 mb-4">
+  <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+    <div class="text-white text-lg">Time & Date</div>
+    <div class="text-white text-3xl">00:00</div>
+    <div class="text-white text-sm">January 1, 2023</div>
+  </div>
+  <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+    <div class="text-white text-lg">Battery</div>
+    <div class="flex flex-row items-center justify-center space-x-2">
+      <div class="h-2 w-10 bg-gray-600 rounded"></div>
+      <div class="text-white text-sm">100%</div>
+    </div>
+    <div class="text-white text-sm">Laptop & AR Glasses</div>
+  </div>
+  <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+    <div class="text-white text-lg">WiFi</div>
+    <div class="flex flex-row items-center justify-center space-x-2">
+      <svg class="h-4 w-4 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10.002 2a10 10 0 1010 10 10 10 0 00-10-10zM10 16.5a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM12.5 8a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+      </svg>
+      <div class="text-white text-sm">Signal Strength</div>
+    </div>
+  </div>
+</div>
+<div class="flex flex-col items-center justify-center w-full space-y-4">
+  <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 rounded shadow-md w-full">
+    <div class="text-white text-lg">Calendar Events & Deadlines</div>
+    <div class="flex flex-col items-start justify-start space-y-2 mt-2">
+      <!-- Repeat this div for each event -->
+      <div class="flex flex-row items-center justify-start space-x-2">
+        <div class="h-2 w-2 bg-gray-600 rounded"></div>
+        <div class="text-white text-sm">Event Name</div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row items-center justify-center space-x-4">
+    <!-- Repeat this div for each app -->
+    <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+      </svg>
+      <div class="text-white text-sm">App Name</div>
+    </div>
+  </div>
+  <div class="flex flex-row items-center justify-center space-x-4">
+    <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+      </svg>
+      <div class="text-white text-sm">Volume & Media Controls</div>
+    </div>
+    <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+      <div class="text-white text-sm">Noise Level & Noise-Cancelling</div>
+    </div>
+    <div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-2 rounded shadow-md">
+      <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <div class="text-white text-sm">Posture Reminder & Break Suggestions</div>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

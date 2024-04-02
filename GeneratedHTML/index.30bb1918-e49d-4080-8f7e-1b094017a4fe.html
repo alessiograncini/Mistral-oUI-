@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col h-screen bg-black">
+<div class="flex items-center justify-between px-4 py-2 border-b border-gray-800">
+  <h1 class="text-white text-lg">AR Workspace</h1>
+  <div class="flex space-x-2">
+    <button class="bg-gray-800 text-white px-2 py-1 rounded">Virtual Desktops</button>
+    <button class="bg-gray-800 text-white px-2 py-1 rounded">Task Manager</button>
+    <button class="bg-gray-800 text-white px-2 py-1 rounded">Time Tracking</button>
+  </div>
+</div>
+<div class="flex-grow flex space-x-4 p-4">
+  <div class="flex-1 bg-gray-800 p-2 rounded shadow-lg">
+    <h2 class="text-white text-lg mb-2">Productivity Tools</h2>
+    <div class="mb-2">
+      <h3 class="text-white text-base mb-1">Note-taking</h3>
+      <textarea class="bg-gray-900 text-white w-full p-1 rounded"></textarea>
+    </div>
+    <div class="mb-2">
+      <h3 class="text-white text-base mb-1">Calendar</h3>
+      <!-- Add calendar component here -->
+    </div>
+    <div>
+      <h3 class="text-white text-base mb-1">To-do List</h3>
+      <!-- Add to-do list component here -->
+    </div>
+  </div>
+  <div class="flex-1 bg-gray-800 p-2 rounded shadow-lg">
+    <h2 class="text-white text-lg mb-2">Communication</h2>
+    <div class="mb-2">
+      <h3 class="text-white text-base mb-1">Video Call Controls</h3>
+      <!-- Add video call controls component here -->
+    </div>
+    <div>
+      <h3 class="text-white text-base mb-1">Messaging</h3>
+      <!-- Add messaging component here -->
+    </div>
+  </div>
+</div>
+<div class="flex items-center justify-between px-4 py-2 border-t border-gray-800">
+  <div class="flex space-x-2">
+    <button class="bg-gray-800 text-white px-2 py-1 rounded">Lighting</button>
+    <button class="bg-gray-800 text-white px-2 py-1 rounded">Temperature</button>
+  </div>
+</div>
+</div>
+</body>
+
+</html>

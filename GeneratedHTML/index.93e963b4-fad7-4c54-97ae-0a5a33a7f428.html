@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<div class="flex flex-col items-center justify-center space-y-4 w-1/2 bg-black bg-opacity-75 p-4 rounded-lg shadow-2xl">
+  <!-- Productivity Timer -->
+  <div class="flex items-center justify-center space-x-2 bg-black bg-opacity-50 p-2 rounded-lg shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div class="text-white text-lg">Productivity Timer</div>
+    <div class="text-white text-xl">25:00</div>
+    <button class="flex items-center justify-center px-2 py-1 bg-gray-700 bg-opacity-50 text-white rounded-lg hover:bg-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- To-Do List -->
+  <div class="flex flex-col items-center justify-center space-y-2 bg-black bg-opacity-50 p-2 rounded-lg shadow-lg">
+    <div class="text-white text-lg">To-Do List</div>
+    <input class="w-full p-1 bg-black bg-opacity-75 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600" type="text" placeholder="Add a task...">
+    <div class="flex flex-col items-start justify-start space-y-1 w-full">
+      <div class="flex items-center justify-between space-x-2 p-1 bg-black bg-opacity-75 rounded-lg">
+        <div class="text-white">Task 1</div>
+        <button class="flex items-center justify-center px-2 py-1 bg-gray-700 bg-opacity-50 text-white rounded-lg hover:bg-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center justify-between space-x-2 p-1 bg-black bg-opacity-75 rounded-lg">
+        <div class="text-white">Task 2</div>
+        <button class="flex items-center justify-center px-2 py-1 bg-gray-700 bg-opacity-50 text-white rounded-lg hover:bg-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar -->
+  <div class="flex items-center justify-center space-x-2 bg-black bg-opacity-50 p-2 rounded-lg shadow-lg">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+    <div class="text-white text-lg">March 28, 2023</div>
+  </div>
+
+  <!-- Notifications -->
+  <div class="flex flex-col items-center justify-center space-y-2 bg-black bg-opacity-50 p-2 rounded-lg shadow-lg">
+    <div class="text-white text-lg">Notifications</div>
+    <div class="flex items-center justify-between space-x-2 p-1 bg-black bg-opacity-75 rounded-lg">
+      <div class="text-white">You have a meeting at 2:00 PM</div>
+      <button class="flex items-center justify-center px-2 py-1 bg-gray-700 bg-opacity-50 text-white rounded-lg hover:bg-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

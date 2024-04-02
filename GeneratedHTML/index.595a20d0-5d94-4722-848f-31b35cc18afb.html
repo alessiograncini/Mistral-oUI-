@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<!-- Productivity Timer -->
+<div class="mb-4 p-4 bg-black bg-opacity-75 shadow-lg rounded-lg">
+  <div class="text-white text-lg font-semibold">Productivity Timer</div>
+  <div class="flex justify-center items-center mt-2">
+    <div class="text-4xl text-white">00:00:00</div>
+    <div class="ml-4">
+      <button class="bg-gray-700 text-white px-4 py-2 rounded">Start</button>
+      <button class="bg-gray-700 text-white px-4 py-2 rounded ml-2">Stop</button>
+    </div>
+  </div>
+</div>
+
+<!-- To-Do List -->
+<div class="mb-4 p-4 bg-black bg-opacity-75 shadow-lg rounded-lg">
+  <div class="text-white text-lg font-semibold">To-Do List</div>
+  <ul class="mt-2 space-y-2">
+    <li class="flex items-center">
+      <input type="checkbox" class="text-green-500 focus:ring-0">
+      <span class="text-white ml-2">Task 1</span>
+    </li>
+    <li class="flex items-center">
+      <input type="checkbox" class="text-green-500 focus:ring-0">
+      <span class="text-white ml-2">Task 2</span>
+    </li>
+  </ul>
+</div>
+
+<!-- Calendar -->
+<div class="mb-4 p-4 bg-black bg-opacity-75 shadow-lg rounded-lg">
+  <div class="text-white text-lg font-semibold">Calendar</div>
+  <div class="mt-2">
+    <!-- Add your calendar component here -->
+  </div>
+</div>
+
+<!-- Focus Mode & Ambient Noise -->
+<div class="flex space-x-2">
+  <!-- Focus Mode -->
+  <div class="p-4 bg-black bg-opacity-75 shadow-lg rounded-lg">
+    <button class="bg-gray-700 text-white px-4 py-2 rounded w-full">Focus Mode</button>
+  </div>
+
+  <!-- Ambient Noise -->
+  <div class="p-4 bg-black bg-opacity-75 shadow-lg rounded-lg">
+    <div class="text-white text-lg font-semibold">Ambient Noise</div>
+    <div class="flex justify-center items-center mt-2 space-x-2">
+      <button class="bg-gray-700 text-white px-4 py-2 rounded">Play</button>
+      <input type="range" min="0" max="100" value="50" class="w-24 bg-gray-700 accent-green-500">
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black">
+<!-- Taskbar -->
+<div class="flex items-center justify-center space-x-4 p-4 bg-black/50 backdrop-blur-md rounded-lg shadow-lg">
+  <div class="w-6 h-6 bg-gray-500 rounded-lg"></div>
+  <div class="w-6 h-6 bg-gray-500 rounded-lg"></div>
+  <div class="w-6 h-6 bg-gray-500 rounded-lg"></div>
+  <div class="w-6 h-6 bg-gray-500 rounded-lg"></div>
+</div>
+
+<!-- Quick Access -->
+<div class="flex items-center justify-center space-x-4 p-4 mt-4 bg-black/50 backdrop-blur-md rounded-lg shadow-lg">
+  <div class="w-12 h-12 bg-gray-500 rounded-lg"></div>
+  <div class="w-12 h-12 bg-gray-500 rounded-lg"></div>
+  <div class="w-12 h-12 bg-gray-500 rounded-lg"></div>
+</div>
+
+<!-- Pomodoro Timer -->
+<div class="flex items-center justify-center space-x-4 p-4 mt-4 bg-black/50 backdrop-blur-md rounded-lg shadow-lg">
+  <div class="w-12 h-12 bg-gray-500 rounded-lg"></div>
+  <div class="text-white text-2xl">25:00</div>
+</div>
+
+<!-- Information Widgets -->
+<div class="flex flex-col items-center justify-center space-y-4 p-4 mt-4 bg-black/50 backdrop-blur-md rounded-lg shadow-lg">
+  <!-- Clock and Weather -->
+  <div class="flex items-center justify-center space-x-4">
+    <div class="w-12 h-12 bg-gray-500 rounded-lg"></div>
+    <div class="text-white">
+      <div>Saturday, 7:30 PM</div>
+      <div>Sunny, 25°C</div>
+    </div>
+  </div>
+
+  <!-- To-do List -->
+  <div class="flex flex-col items-start justify-start space-y-2 w-64">
+    <div class="text-white">To-do List</div>
+    <div class="w-full h-1 bg-gray-500 rounded-lg"></div>
+    <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+    <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+    <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+  </div>
+
+  <!-- Calendar -->
+  <div class="flex flex-col items-start justify-start space-y-2 w-64">
+    <div class="text-white">Calendar</div>
+    <div class="w-full h-1 bg-gray-500 rounded-lg"></div>
+    <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+    <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+    <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+  </div>
+</div>
+
+<!-- Notifications -->
+<div class="flex flex-col items-center justify-center space-y-4 p-4 mt-4 bg-black/50 backdrop-blur-md rounded-lg shadow-lg">
+  <div class="text-white">Notifications</div>
+  <div class="w-full h-1 bg-gray-500 rounded-lg"></div>
+  <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+  <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+  <div class="w-full h-4 bg-gray-500 rounded-lg"></div>
+</div>
+</div>
+```
+</body>
+
+</html>

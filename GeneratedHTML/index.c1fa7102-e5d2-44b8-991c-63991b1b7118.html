@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col h-screen w-screen bg-black">
+<div class="flex justify-end p-4">
+  <!-- Buttons for productivity apps -->
+  <button class="bg-gray-800 text-white px-4 py-2 rounded-md mr-2 hover:bg-gray-700">Word Processor</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded-md mr-2 hover:bg-gray-700">Spreadsheet</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded-md mr-2 hover:bg-gray-700">Web Browser</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded-md mr-2 hover:bg-gray-700">Email Client</button>
+</div>
+<div class="flex-grow flex justify-center items-center">
+  <!-- Digital notepad -->
+  <div class="bg-gray-800 p-4 rounded-md shadow-lg w-96 h-96">
+    <textarea class="bg-gray-800 text-white w-full h-full resize-none border-0 focus:outline-none"></textarea>
+  </div>
+</div>
+<div class="flex-grow flex justify-center items-end mb-4">
+  <!-- Timeline view -->
+  <div class="bg-gray-800 p-4 rounded-md shadow-lg w-96 h-24 overflow-x-auto">
+    <div class="flex space-x-4">
+      <div class="bg-gray-700 text-white px-4 py-2 rounded-md">Document 1</div>
+      <div class="bg-gray-700 text-white px-4 py-2 rounded-md">Document 2</div>
+      <div class="bg-gray-700 text-white px-4 py-2 rounded-md">Document 3</div>
+      <!-- Add more items as needed -->
+    </div>
+  </div>
+</div>
+<div class="flex justify-between p-4">
+  <!-- Volume slider -->
+  <div class="w-24">
+    <input type="range" class="w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" min="0" max="100">
+  </div>
+  <!-- Pomodoro timer -->
+  <div class="bg-gray-800 p-4 rounded-md shadow-lg w-24 flex flex-col items-center">
+    <div class="text-white text-sm">25:00</div>
+    <div class="flex space-x-2 mt-2">
+      <button class="bg-gray-700 text-white px-2 py-1 rounded-md">Start</button>
+      <button class="bg-gray-700 text-white px-2 py-1 rounded-md">Pause</button>
+      <button class="bg-gray-700 text-white px-2 py-1 rounded-md">Reset</button>
+    </div>
+  </div>
+</div>
+<div class="flex justify-end p-4">
+  <!-- Integrated chat and video call icons -->
+  <button class="bg-gray-800 text-white px-4 py-2 rounded-md mr-2 hover:bg-gray-700">Chat</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded-md mr-2 hover:bg-gray-700">Video Call</button>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="fixed top-0 left-0 w-full h-full flex justify-center items-center">
+<!-- Task Manager -->
+<div class="bg-black bg-opacity-50 shadow-2xl rounded-lg p-4 w-96 h-96">
+  <h2 class="text-white text-2xl font-bold mb-4">Task Manager</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center">
+      <input class="mr-2" type="checkbox">
+      <span class="text-white">Task 1</span>
+    </li>
+    <li class="flex items-center">
+      <input class="mr-2" type="checkbox">
+      <span class="text-white">Task 2</span>
+    </li>
+    <li class="flex items-center">
+      <input class="mr-2" type="checkbox">
+      <span class="text-white">Task 3</span>
+    </li>
+  </ul>
+  <button class="bg-white bg-opacity-20 text-white mt-4 py-2 px-4 rounded">Add Task</button>
+</div>
+
+<!-- Time Tracker -->
+<div class="bg-black bg-opacity-50 shadow-2xl rounded-lg p-4 w-64 h-64 ml-8">
+  <h2 class="text-white text-2xl font-bold mb-4">Time Tracker</h2>
+  <div class="text-white text-6xl font-bold">00:00:00</div>
+  <div class="flex justify-between mt-4">
+    <button class="bg-white bg-opacity-20 text-white py-2 px-4 rounded">Start</button>
+    <button class="bg-white bg-opacity-20 text-white py-2 px-4 rounded">Stop</button>
+  </div>
+</div>
+
+<!-- Notification Center -->
+<div class="bg-black bg-opacity-50 shadow-2xl rounded-lg p-4 w-96 h-96 ml-8">
+  <h2 class="text-white text-2xl font-bold mb-4">Notification Center</h2>
+  <ul class="space-y-2">
+    <li class="text-white">Notification 1</li>
+    <li class="text-white">Notification 2</li>
+    <li class="text-white">Notification 3</li>
+  </ul>
+  <button class="bg-white bg-opacity-20 text-white mt-4 py-2 px-4 rounded">Clear All</button>
+</div>
+
+<!-- Quick Actions -->
+<div class="bg-black bg-opacity-50 shadow-2xl rounded-lg p-4 w-64 h-64 ml-8">
+  <h2 class="text-white text-2xl font-bold mb-4">Quick Actions</h2>
+  <div class="flex flex-wrap space-x-2">
+    <button class="bg-white bg-opacity-20 text-white py-2 px-4 rounded">Action 1</button>
+    <button class="bg-white bg-opacity-20 text-white py-2 px-4 rounded">Action 2</button>
+    <button class="bg-white bg-opacity-20 text-white py-2 px-4 rounded">Action 3</button>
+    <button class="bg-white bg-opacity-20 text-white py-2 px-4 rounded">Action 4</button>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

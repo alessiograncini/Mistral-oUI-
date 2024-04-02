@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<div class="w-full max-w-md px-4 py-6 mb-6 bg-black bg-opacity-75 shadow-2xl rounded-lg">
+  <div class="flex justify-between">
+    <div class="text-white text-xl font-semibold">Laptop Status</div>
+    <div class="flex items-center space-x-2">
+      <div class="h-3 w-3 rounded-full bg-green-500"></div>
+      <div class="text-white text-sm">Online</div>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 mt-4 text-white">
+    <div>
+      <div class="text-sm font-semibold">Battery</div>
+      <div class="h-2 bg-gray-700 rounded-full mt-1">
+        <div class="h-2 bg-green-500 rounded-full w-3/4"></div>
+      </div>
+      <div class="text-xs">85%</div>
+    </div>
+    <div>
+      <div class="text-sm font-semibold">CPU</div>
+      <div class="h-2 bg-gray-700 rounded-full mt-1">
+        <div class="h-2 bg-blue-500 rounded-full w-1/2"></div>
+      </div>
+      <div class="text-xs">50%</div>
+    </div>
+    <div>
+      <div class="text-sm font-semibold">Memory</div>
+      <div class="h-2 bg-gray-700 rounded-full mt-1">
+        <div class="h-2 bg-purple-500 rounded-full w-1/4"></div>
+      </div>
+      <div class="text-xs">25%</div>
+    </div>
+    <div>
+      <div class="text-sm font-semibold">Network</div>
+      <div class="text-xs">Connected</div>
+    </div>
+  </div>
+</div>
+
+<div class="w-full max-w-md px-4 py-6 mb-6 bg-black bg-opacity-75 shadow-2xl rounded-lg">
+  <div class="flex justify-between items-center">
+    <div class="text-white text-xl font-semibold">Time & Calendar</div>
+    <div class="text-white text-xl font-semibold">12:34 PM</div>
+  </div>
+  <div class="text-white text-sm font-semibold mt-4">March 20, 2023</div>
+  <div class="grid grid-cols-7 gap-1 text-xs text-gray-400 mt-4">
+    <!-- Add calendar grid here -->
+  </div>
+</div>
+
+<div class="w-full max-w-md px-4 py-6 mb-6 bg-black bg-opacity-75 shadow-2xl rounded-lg">
+  <div class="flex justify-between items-center">
+    <div class="text-white text-xl font-semibold">Task Manager</div>
+    <button class="focus:outline-none text-white text-sm font-semibold py-1 px-2 rounded bg-gray-700 hover:bg-gray-600">+ Add Task</button>
+  </div>
+  <div class="text-white mt-4">
+    <!-- Add task list here -->
+  </div>
+</div>
+
+<div class="w-full max-w-md px-4 py-6 mb-6 bg-black bg-opacity-75 shadow-2xl rounded-lg">
+  <div class="text-white text-xl font-semibold">Productivity Metrics</div>
+  <div class="grid grid-cols-2 gap-4 mt-4 text-white">
+    <!-- Add productivity metrics here -->
+  </div>
+</div>
+
+<div class="w-full max-w-md px-4 py-6 mb-6 bg-black bg-opacity-75 shadow-2xl rounded-lg">
+  <div class="text-white text-xl font-semibold">Focus Timer</div>
+  <div class="text-white text-6xl font-semibold mt-4">25:00</div>
+  <div class="flex justify-between mt-4 space-x-2">
+    <button class="focus:outline-none text-white text-sm font-semibold py-1 px-2 rounded bg-gray-700 hover:bg-gray-600">Start</button>
+    <button class="focus:outline-none text-white text-sm font-semibold py-1 px-2 rounded bg-gray-700 hover:bg-gray-600">Pause</button>
+    <button class="focus:outline-none text-white text-sm font-semibold py-1 px-2 rounded bg-gray-700 hover:bg-gray-600">Reset</button>
+  </div>
+</div>
+
+<div class="w-full max-w-md px-4 py-6 mb-6 bg-black bg-opacity-75 shadow-2xl rounded-lg">
+  <div class="text-white text-xl font-semibold">Quick Shortcuts</div>
+  <div class="grid grid-cols-2 gap-4 mt-4">
+    <!-- Add shortcuts here -->
+  </div>
+</div>
+</div>
+</body>
+
+</html>

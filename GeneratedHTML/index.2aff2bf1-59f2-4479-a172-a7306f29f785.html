@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-start justify-center h-screen w-screen p-6 bg-black bg-opacity-50">
+<!-- Task Manager -->
+<div class="w-full max-w-md mb-6 bg-black bg-opacity-75 shadow-lg rounded-lg p-4 flex flex-col">
+  <h2 class="text-white text-lg font-semibold mb-2">Task Manager</h2>
+  <ul class="flex-grow space-y-2">
+    <li class="flex items-center">
+      <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500">
+      <label class="text-white ml-2">Task 1</label>
+    </li>
+    <li class="flex items-center">
+      <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-500">
+      <label class="text-white ml-2">Task 2</label>
+    </li>
+  </ul>
+  <input type="text" class="w-full bg-black bg-opacity-50 text-white rounded-lg p-2 mt-2 focus:outline-none focus:ring focus:ring-blue-500" placeholder="Add a task">
+</div>
+
+<!-- Calendar -->
+<div class="w-full max-w-md mb-6 bg-black bg-opacity-75 shadow-lg rounded-lg p-4">
+  <h2 class="text-white text-lg font-semibold mb-2">Calendar</h2>
+  <div class="flex flex-col space-y-2">
+    <div class="flex items-center space-x-2">
+      <div class="h-3 w-3 bg-blue-500 rounded-full"></div>
+      <p class="text-white">Meeting with John - 9:00 AM</p>
+    </div>
+    <div class="flex items-center space-x-2">
+      <div class="h-3 w-3 bg-green-500 rounded-full"></div>
+      <p class="text-white">Lunch break - 12:00 PM</p>
+    </div>
+  </div>
+</div>
+
+<!-- Productivity Metrics & Notification Center -->
+<div class="flex flex-1 space-x-4">
+  <!-- Productivity Metrics -->
+  <div class="flex-1 bg-black bg-opacity-75 shadow-lg rounded-lg p-4">
+    <h2 class="text-white text-lg font-semibold mb-2">Productivity Metrics</h2>
+    <div class="flex flex-col space-y-2 text-white">
+      <div class="flex items-center justify-between">
+        <p>Time spent working:</p>
+        <p>3h 20m</p>
+      </div>
+      <div class="flex items-center justify-between">
+        <p>Tasks completed:</p>
+        <p>5/10</p>
+      </div>
+      <div class="flex items-center justify-between">
+        <p>Estimated productivity:</p>
+        <p>75%</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Center -->
+  <div class="flex-1 bg-black bg-opacity-75 shadow-lg rounded-lg p-4">
+    <h2 class="text-white text-lg font-semibold mb-2">Notification Center</h2>
+    <div class="flex flex-col space-y-2">
+      <div class="flex items-center space-x-2">
+        <div class="h-3 w-3 bg-blue-500 rounded-full"></div>
+        <p class="text-white">New message from John</p>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="h-3 w-3 bg-green-500 rounded-full"></div>
+        <p class="text-white">Task completed: Send report</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="w-full max-w-md mt-6 flex space-x-2">
+  <button class="bg-black bg-opacity-75 hover:bg-opacity-80 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-blue-500">Open new document</button>
+  <button class="bg-black bg-opacity-75 hover:bg-opacity-80 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-blue-500">Send email</button>
+  <button class="bg-black bg-opacity-75 hover:bg-opacity-80 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-blue-500">Set timer</button>
+</div>
+</div>
+```
+</body>
+
+</html>

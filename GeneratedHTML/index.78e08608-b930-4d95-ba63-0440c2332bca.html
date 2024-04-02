@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black">
+<div class="flex flex-row space-x-4">
+  <!-- Calendar -->
+  <div class="bg-black shadow-2xl rounded-lg p-4 border border-gray-700">
+    <h2 class="text-white text-lg font-semibold mb-2">Calendar</h2>
+    <p class="text-white">Current Date: <span class="font-semibold">October 20, 2022</span></p>
+    <p class="text-white">Upcoming Meeting: <span class="font-semibold">Project Review at 2:00 PM</span></p>
+  </div>
+
+  <!-- To-Do List -->
+  <div class="bg-black shadow-2xl rounded-lg p-4 border border-gray-700">
+    <h2 class="text-white text-lg font-semibold mb-2">To-Do List</h2>
+    <ul class="text-white space-y-2">
+      <li>- Task 1</li>
+      <li>- Task 2</li>
+      <li>- Task 3</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flex flex-row space-x-4 mt-6">
+  <!-- Collaboration Tools -->
+  <div class="flex flex-row space-x-2">
+    <div class="bg-black shadow-2xl rounded-lg p-2 border border-gray-700">
+      <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+    </div>
+    <div class="bg-black shadow-2xl rounded-lg p-2 border border-gray-700">
+      <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+    </div>
+    <div class="bg-black shadow-2xl rounded-lg p-2 border border-gray-700">
+      <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+    </div>
+  </div>
+
+  <!-- Quick Launch -->
+  <div class="bg-black shadow-2xl rounded-lg p-4 border border-gray-700">
+    <h2 class="text-white text-lg font-semibold mb-2">Quick Launch</h2>
+    <div class="flex flex-row space-x-2">
+      <div class="bg-white shadow rounded-lg p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      </div>
+      <div class="bg-white shadow rounded-lg p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+      </div>
+      <div class="bg-white shadow rounded-lg p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notifications -->
+<div class="bg-black shadow-2xl rounded-lg p-4 border border-gray-700 mt-6">
+  <h2 class="text-white text-lg font-semibold mb-2">Notifications</h2>
+  <p class="text-white">New Email: <span class="font-semibold">Project Update</span></p>
+  <p class="text-white">Message: <span class="font-semibold">Meeting Rescheduled to 3:00 PM</span></p>
+</div>
+</div>
+</body>
+
+</html>

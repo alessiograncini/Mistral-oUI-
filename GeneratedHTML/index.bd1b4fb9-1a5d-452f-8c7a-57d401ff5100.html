@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col h-screen w-screen bg-black">
+<div class="flex flex-row justify-between items-center p-4">
+  <h1 class="text-white text-2xl">AR Workspace</h1>
+  <button class="bg-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:shadow-outline">Focus Mode</button>
+</div>
+<div class="flex flex-1">
+  <div class="w-1/4 bg-gray-800 p-4">
+    <h2 class="text-white text-xl mb-4">Task Manager</h2>
+    <!-- Task items go here -->
+    <div class="bg-gray-700 p-2 mb-2 rounded shadow">
+      <p class="text-white">Task 1</p>
+      <p class="text-gray-400">Due: 2022-07-01</p>
+    </div>
+    <!-- Add more task items as needed -->
+  </div>
+  <div class="flex flex-col flex-1 p-4">
+    <div class="flex flex-1">
+      <div class="flex flex-col flex-1 mr-4">
+        <h2 class="text-white text-xl mb-4">Calendar</h2>
+        <!-- Calendar events go here -->
+      </div>
+      <div class="flex flex-col flex-1">
+        <h2 class="text-white text-xl mb-4">Note-taking</h2>
+        <!-- Notes go here -->
+      </div>
+    </div>
+    <div class="flex flex-row justify-between items-center mt-4">
+      <h2 class="text-white text-xl">Quick Actions</h2>
+      <!-- Quick actions go here -->
+      <div class="flex flex-row space-x-2">
+        <button class="bg-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:shadow-outline">Action 1</button>
+        <button class="bg-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:shadow-outline">Action 2</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col h-screen w-screen bg-black">
+<!-- Task Manager -->
+<div class="p-4 bg-black border border-gray-700 shadow-lg rounded-lg mb-4">
+  <h2 class="text-white text-xl font-semibold mb-2">Task Manager</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center">
+      <input type="checkbox" class="mr-2">
+      <span class="text-gray-300">Task 1</span>
+    </li>
+    <li class="flex items-center">
+      <input type="checkbox" class="mr-2">
+      <span class="text-gray-300">Task 2</span>
+    </li>
+    <li class="flex items-center">
+      <input type="checkbox" class="mr-2">
+      <span class="text-gray-300">Task 3</span>
+    </li>
+  </ul>
+  <button class="bg-gray-700 text-white px-4 py-2 rounded-lg mt-4 focus:outline-none">Add Task</button>
+</div>
+
+<!-- Note-taking -->
+<div class="p-4 bg-black border border-gray-700 shadow-lg rounded-lg mb-4">
+  <h2 class="text-white text-xl font-semibold mb-2">Note-taking</h2>
+  <textarea class="bg-black text-gray-300 border border-gray-700 rounded-lg p-2 resize-none" rows="4"></textarea>
+</div>
+
+<!-- Productivity Apps -->
+<div class="flex flex-wrap justify-center mb-4">
+  <div class="bg-black border border-gray-700 shadow-lg rounded-lg p-2 m-1">
+    <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+    </svg>
+  </div>
+  <div class="bg-black border border-gray-700 shadow-lg rounded-lg p-2 m-1">
+    <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>
+  </div>
+  <div class="bg-black border border-gray-700 shadow-lg rounded-lg p-2 m-1">
+    <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+    </svg>
+  </div>
+</div>
+
+<!-- Calendar -->
+<div class="p-4 bg-black border border-gray-700 shadow-lg rounded-lg mb-4">
+  <h2 class="text-white text-xl font-semibold mb-2">Calendar</h2>
+  <div class="grid grid-cols-7 text-gray-500 text-center">
+    <div>Su</div>
+    <div>Mo</div>
+    <div>Tu</div>
+    <div>We</div>
+    <div>Th</div>
+    <div>Fr</div>
+    <div>Sa</div>
+  </div>
+  <div class="grid grid-cols-7">
+    <div class="py-1">1</div>
+    <div class="py-1">2</div>
+    <div class="py-1">3</div>
+    <div class="py-1">4</div>
+    <div class="py-1">5</div>
+    <div class="py-1">6</div>
+    <div class="py-1">7</div>
+  </div>
+</div>
+
+<!-- Settings -->
+<div class="p-4 bg-black border border-gray-700 shadow-lg rounded-lg">
+  <h2 class="text-white text-xl font-semibold mb-2">Settings</h2>
+  <div class="flex items-center mb-2">
+    <span class="text-gray-300 mr-2">Transparency:</span>
+    <input type="range" class="w-full">
+  </div>
+  <div class="flex items-center mb-2">
+    <span class="text-gray-300 mr-2">Font Size:</span>
+    <input type="range" class="w-full">
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

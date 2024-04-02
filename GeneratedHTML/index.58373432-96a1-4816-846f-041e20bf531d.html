@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col h-screen w-screen bg-black">
+<div class="flex flex-row justify-between p-4">
+  <div class="flex space-x-2">
+    <button class="bg-gray-700 text-white px-4 py-2 rounded">Email</button>
+    <button class="bg-gray-700 text-white px-4 py-2 rounded">Calendar</button>
+    <button class="bg-gray-700 text-white px-4 py-2 rounded">Messaging</button>
+  </div>
+  <div class="flex space-x-2">
+    <button class="bg-gray-700 text-white px-4 py-2 rounded">Brightness</button>
+    <button class="bg-gray-700 text-white px-4 py-2 rounded">Blue Light Filter</button>
+    <button class="bg-gray-700 text-white px-4 py-2 rounded">Stretch Reminder</button>
+  </div>
+</div>
+<div class="flex flex-row justify-between p-4">
+  <div class="w-1/3 bg-gray-800 p-4 rounded shadow-lg">
+    <h2 class="text-white text-2xl mb-4">Task Management</h2>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" class="form-checkbox text-green-500">
+      <label class="text-white ml-2">Task 1</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" class="form-checkbox text-green-500">
+      <label class="text-white ml-2">Task 2</label>
+    </div>
+    <button class="bg-gray-700 text-white px-4 py-2 rounded mt-4">Add Task</button>
+  </div>
+  <div class="w-1/3 bg-gray-800 p-4 rounded shadow-lg">
+    <h2 class="text-white text-2xl mb-4">Collaboration Tools</h2>
+    <button class="bg-gray-700 text-white px-4 py-2 rounded mb-4">Video Call</button>
+    <div class="flex flex-col space-y-2 mb-4">
+      <textarea class="bg-gray-700 text-white p-2 rounded" rows="4"></textarea>
+      <button class="bg-gray-700 text-white px-4 py-2 rounded">Save</button>
+    </div>
+    <div class="flex flex-col space-y-2">
+      <input type="text" class="bg-gray-700 text-white p-2 rounded" placeholder="Type a message...">
+      <button class="bg-gray-700 text-white px-4 py-2 rounded">Send</button>
+    </div>
+  </div>
+  <div class="w-1/3 bg-gray-800 p-4 rounded shadow-lg">
+    <h2 class="text-white text-2xl mb-4">Productivity Tools</h2>
+    <div class="flex items-center mb-4">
+      <input type="checkbox" class="form-checkbox text-green-500">
+      <label class="text-white ml-2">Pomodoro Timer</label>
+    </div>
+    <div class="flex items-center">
+      <svg class="fill-current text-white h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zM10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/></svg>
+      <label class="text-white">Ambient Noise</label>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

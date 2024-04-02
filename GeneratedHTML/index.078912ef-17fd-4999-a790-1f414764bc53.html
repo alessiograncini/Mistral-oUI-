@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 rounded-lg shadow-2xl">
+  <h1 class="text-white text-2xl mb-4">Laptop 1 Controls</h1>
+  <div class="flex items-center mb-2">
+    <label class="text-white mr-2">Volume:</label>
+    <input type="range" class="w-32 h-2 bg-gray-700 rounded-lg appearance-none">
+  </div>
+  <div class="flex items-center mb-2">
+    <label class="text-white mr-2">Brightness:</label>
+    <input type="range" class="w-32 h-2 bg-gray-700 rounded-lg appearance-none">
+  </div>
+  <div class="flex space-x-2">
+    <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">Power</button>
+    <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">Settings</button>
+  </div>
+</div>
+<div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 rounded-lg shadow-2xl mt-4">
+  <h1 class="text-white text-2xl mb-4">Notifications</h1>
+  <div class="flex flex-col space-y-2">
+    <div class="flex items-center bg-gray-700 px-2 py-1 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+      </svg>
+      <p class="text-white ml-2">You have a new email</p>
+    </div>
+    <div class="flex items-center bg-gray-700 px-2 py-1 rounded">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="text-white ml-2">Upcoming event: Team meeting at 3pm</p>
+    </div>
+  </div>
+</div>
+<div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 rounded-lg shadow-2xl mt-4">
+  <h1 class="text-white text-2xl mb-4">Collaboration Tools</h1>
+  <div class="flex space-x-2">
+    <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">Video Call</button>
+    <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">Screen Share</button>
+    <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">Doc Edit</button>
+  </div>
+</div>
+<div class="flex flex-col items-center justify-center bg-black bg-opacity-75 p-4 rounded-lg shadow-2xl mt-4">
+  <h1 class="text-white text-2xl mb-4">Environmental Awareness</h1>
+  <div class="flex flex-col space-y-2">
+    <div class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <p class="text-white ml-2">3 people in the room</p>
+    </div>
+    <div class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+      </svg>
+      <p class="text-white ml-2">Temperature: 72°F</p>
+    </div>
+    <div class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      <p class="text-white ml-2">Lighting: Bright</p>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

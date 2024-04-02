@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col h-screen w-screen bg-black bg-opacity-50">
+<div class="flex flex-row justify-between px-4 py-2">
+  <div class="flex flex-col bg-black bg-opacity-75 px-4 py-2 rounded shadow-lg">
+    <div class="text-white text-sm">Device Information</div>
+    <div class="text-gray-400 text-xs">
+      <div>Battery: 85%</div>
+      <div>Wi-Fi: Connected</div>
+      <div>Device: Laptop 1</div>
+    </div>
+  </div>
+  <div class="flex flex-row space-x-2">
+    <div class="bg-black bg-opacity-75 px-2 py-1 rounded shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-browser text-white h-4 w-4">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <line x1="12" y1="10" x2="12" y2="10"></line>
+        <circle cx="12" cy="5" r="1"></circle>
+      </svg>
+    </div>
+    <div class="bg-black bg-opacity-75 px-2 py-1 rounded shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text text-white h-4 w-4">
+        <path d="M14 2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+    </div>
+    <div class="bg-black bg-opacity-75 px-2 py-1 rounded shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark text-white h-4 w-4">
+        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="flex flex-row justify-between px-4 mt-2">
+  <div class="flex flex-col bg-black bg-opacity-75 px-4 py-2 rounded shadow-lg">
+    <div class="text-white text-sm">Device Controls</div>
+    <div class="flex flex-row justify-between mt-1">
+      <div class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-volume text-white h-4 w-4">
+          <path d="M11.536 14.01A8.473 8.473 0 0 1 12 20c1.38 0 2.653-.8 3.431-2.09.52.71.895 1.545.895 2.431 0 1.718-.707 3.105-2.319 3.804a7.5 7.5 0 0 1-3.18 1.195 3.727 3.727 0 0 1-3.433-.862 8.473 8.473 0 0 1 1.07-3.94m3.86 3.342c-.186.172-.42.282-.695.282a2.22 2.22 0 0 1-1.519-.917l-.695-.695C15.52 19.343 16 18.84 16 18c0-.414-.134-.805-.35-.98v-.342c0-.414-.134-.805-.35-.98A8.473 8.473 0 0 0 12 15.536a8.473 8.473 0 0 1 3.65-.182l.695.695c.212.21.282.444.282.695a2.22 2.22 0 0 1-.917 1.519l-.695.695z"></path>
+        </svg>
+        <div class="text-gray-400 text-xs">Volume</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun text-white h-4 w-4">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <div class="text-gray-400 text-xs">Brightness</div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col bg-black bg-opacity-75 px-4 py-2 rounded shadow-lg">
+    <div class="text-white text-sm">People Profiles</div>
+    <div class="flex flex-row justify-between mt-1">
+      <div class="flex flex-col items-center">
+        <div class="bg-white bg-opacity-75 rounded-full h-8 w-8 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user text-black h-4 w-4">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="text-gray-400 text-xs">John Doe</div>
+        <div class="text-gray-500 text-xs">Software Engineer</div>
+      </div>
+      <div class="flex flex-col items-center ml-4">
+        <div class="bg-white bg-opacity-75 rounded-full h-8 w-8 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user text-black h-4 w-4">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="text-gray-400 text-xs">Jane Doe</div>
+        <div class="text-gray-500 text-xs">Product Manager</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="flex flex-row justify-between px-4 mt-2">
+  <div class="flex flex-col bg-black bg-opacity-75 px-4 py-2 rounded shadow-lg">
+    <div class="text-white text-sm">Collaboration Tools</div>
+    <div class="flex flex-row justify-between mt-1">
+      <div class="flex flex-col items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video text-white h-4 w-4">
+          <path d="M23 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"></path>
+          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+        </svg>
+        <div class="text-gray-400 text-xs">Video Call</div>
+      </div>
+      <div class="flex flex-col items-center ml-4">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share text-white h-4 w-4">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          <polyline points="16 6 12 2 8 6"></polyline>
+          <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+        <div class="text-gray-400 text-xs">Share Screen</div>
+      </div>
+      <div class="flex flex-col items-center ml-4">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square text-white h-4 w-4">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          <polyline points="7 10 9 11 12 10"></polyline>
+        </svg>
+        <div class="text-gray-400 text-xs">Send Message</div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col bg-black bg-opacity-75 px-4 py-2 rounded shadow-lg">
+    <div class="text-white text-sm">Room Overview</div>
+    <!-- Add your custom SVG for the room layout here -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map text-white h-16 w-16 mx-auto mt-2">
+      <polygon points="1 6 1 22 8 18 16 22 23 22 23 18 16 14 8 18 1 14 1 6"></polygon>
+      <line x1="1" y1="6" x2="23" y2="6"></line>
+      <line x1="8" y1="14" x2="16" y2="14"></line>
+    </svg>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

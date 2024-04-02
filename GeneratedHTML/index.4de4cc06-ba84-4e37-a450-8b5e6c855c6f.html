@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col h-screen w-screen bg-black">
+<div class="flex items-center justify-between p-4 border-b border-gray-800">
+  <div class="text-white text-lg font-semibold">AR Workspace</div>
+  <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded">Voice Controls</button>
+</div>
+<div class="flex flex-grow">
+  <div class="flex flex-col w-1/4 p-4 border-r border-gray-800">
+    <div class="flex flex-col p-2 rounded-lg bg-gray-900 bg-opacity-50 shadow-lg mb-4">
+      <div class="text-white text-lg font-semibold mb-2">Communication</div>
+      <button class="flex items-center justify-between w-full p-2 rounded-lg text-left hover:bg-gray-800">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <div class="text-white ml-2">Email</div>
+        </div>
+        <div class="text-gray-400">15</div>
+      </button>
+      <!-- Add more communication buttons -->
+    </div>
+    <div class="flex flex-col p-2 rounded-lg bg-gray-900 bg-opacity-50 shadow-lg">
+      <div class="text-white text-lg font-semibold mb-2">Calendar</div>
+      <!-- Add calendar events -->
+    </div>
+  </div>
+  <div class="flex flex-col flex-grow p-4 border-r border-gray-800">
+    <div class="text-white text-lg font-semibold mb-4">Document Viewer</div>
+    <div class="flex flex-col p-2 rounded-lg bg-gray-900 bg-opacity-50 shadow-lg flex-grow">
+      <!-- Add document viewer content -->
+    </div>
+  </div>
+  <div class="flex flex-col w-1/4 p-4">
+    <div class="text-white text-lg font-semibold mb-4">Task Manager</div>
+    <div class="flex flex-col p-2 rounded-lg bg-gray-900 bg-opacity-50 shadow-lg">
+      <!-- Add task manager content -->
+    </div>
+  </div>
+</div>
+</div>
+</body>
+
+</html>

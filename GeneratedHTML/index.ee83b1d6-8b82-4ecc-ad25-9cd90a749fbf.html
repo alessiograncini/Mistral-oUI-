@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<!-- Task Manager -->
+<div class="w-full max-w-2xl mb-8 px-4 py-6 bg-black bg-opacity-75 shadow-2xl rounded-lg border border-gray-700">
+  <h2 class="text-white text-2xl font-semibold mb-4">Task Manager</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center justify-between">
+      <span class="text-white">Task 1</span>
+      <span class="text-gray-400">2hrs remaining</span>
+    </li>
+    <li class="flex items-center justify-between">
+      <span class="text-white">Task 2</span>
+      <span class="text-gray-400">1hr remaining</span>
+    </li>
+  </ul>
+  <button class="mt-4 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded">Add Task</button>
+</div>
+
+<!-- Focus Timer -->
+<div class="w-full max-w-sm mb-8 px-4 py-6 bg-black bg-opacity-75 shadow-2xl rounded-lg border border-gray-700">
+  <h2 class="text-white text-2xl font-semibold mb-4">Focus Timer</h2>
+  <div class="text-white text-6xl mb-4">25:00</div>
+  <div class="flex justify-between">
+    <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded">Start</button>
+    <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded">Pause</button>
+    <button class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded">Reset</button>
+  </div>
+</div>
+
+<!-- Quick Notes -->
+<div class="w-full max-w-2xl mb-8 px-4 py-6 bg-black bg-opacity-75 shadow-2xl rounded-lg border border-gray-700">
+  <h2 class="text-white text-2xl font-semibold mb-4">Quick Notes</h2>
+  <textarea class="w-full h-32 p-2 bg-black bg-opacity-75 text-white border border-gray-700 rounded resize-none" placeholder="Jot down your notes here..."></textarea>
+</div>
+
+<!-- Productivity Insights -->
+<div class="w-full max-w-xl mb-8 px-4 py-6 bg-black bg-opacity-75 shadow-2xl rounded-lg border border-gray-700">
+  <h2 class="text-white text-2xl font-semibold mb-4">Productivity Insights</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center justify-between">
+      <span class="text-white">Total time spent working</span>
+      <span class="text-gray-400">6hrs</span>
+    </li>
+    <li class="flex items-center justify-between">
+      <span class="text-white">Tasks completed</span>
+      <span class="text-gray-400">4</span>
+    </li>
+    <li class="flex items-center justify-between">
+      <span class="text-white">Average focus duration</span>
+      <span class="text-gray-400">30mins</span>
+    </li>
+  </ul>
+</div>
+
+<!-- Calendar -->
+<div class="w-full max-w-2xl px-4 py-6 bg-black bg-opacity-75 shadow-2xl rounded-lg border border-gray-700">
+  <h2 class="text-white text-2xl font-semibold mb-4">Calendar</h2>
+  <!-- Add your calendar implementation here -->
+</div>
+</div>
+```
+</body>
+
+</html>

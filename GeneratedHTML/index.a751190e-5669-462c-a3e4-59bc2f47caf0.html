@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<div class="flex flex-row space-x-4">
+  <!-- Task Manager -->
+  <div class="bg-black bg-opacity-75 shadow-2xl rounded-lg p-4 w-64">
+    <h2 class="text-white text-lg font-semibold mb-2">Task Manager</h2>
+    <ul class="space-y-2">
+      <li class="flex items-center">
+        <input type="checkbox" class="text-blue-500 focus:ring-blue-500">
+        <span class="text-white ml-2">Sample task</span>
+      </li>
+      <li class="flex items-center">
+        <input type="checkbox" class="text-blue-500 focus:ring-blue-500">
+        <span class="text-white ml-2">Another task</span>
+      </li>
+    </ul>
+    <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-2 focus:outline-none">
+      Add Task
+    </button>
+  </div>
+
+  <!-- Calendar -->
+  <div class="bg-black bg-opacity-75 shadow-2xl rounded-lg p-4 w-64">
+    <h2 class="text-white text-lg font-semibold mb-2">Calendar</h2>
+    <div class="flex flex-col space-y-2">
+      <div class="text-white">April 15, 2023</div>
+      <div class="text-white">Meeting with John @ 10:00 AM</div>
+      <div class="text-white">Project Deadline @ 4:00 PM</div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-row space-x-4 mt-4">
+  <!-- Quick Actions -->
+  <div class="bg-black bg-opacity-75 shadow-2xl rounded-lg p-4 w-64">
+    <h2 class="text-white text-lg font-semibold mb-2">Quick Actions</h2>
+    <div class="flex flex-col space-y-2">
+      <button class="flex items-center space-x-2 text-white hover:text-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mic">
+          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+          <line x1="12" y1="9" x2="12" y2="15"></line>
+          <line x1="15" y1="12" x2="18" y2="12"></line>
+        </svg>
+        <span>Mute/Unmute</span>
+      </button>
+      <div class="flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-volume">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="19" y1="9" x2="19" y2="15"></line>
+          <line x1="13" y1="12" x2="19" y2="12"></line>
+        </svg>
+        <input type="range" min="0" max="100" value="50" class="w-24 h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+      </div>
+      <button class="flex items-center space-x-2 text-white hover:text-blue-500">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
+        <span>Take Screenshot</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Ambient Information -->
+  <div class="bg-black bg-opacity-75 shadow-2xl rounded-lg p-4 w-64">
+    <h2 class="text-white text-lg font-semibold mb-2">Ambient Information</h2>
+    <div class="flex flex-col space-y-2">
+      <div class="text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock mr-2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        1:30 PM, April 15, 2023
+      </div>
+      <div class="text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun mr-2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        75°F, Sunny
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

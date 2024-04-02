@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col h-screen w-screen p-4">
+<!-- Task Manager -->
+<div class="flex-1 bg-black bg-opacity-50 rounded-lg shadow-lg p-4 space-y-4">
+  <h2 class="text-white text-xl font-semibold">Task Manager</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center space-x-2">
+      <input type="checkbox" class="form-checkbox text-blue-500">
+      <span class="text-white">Task 1</span>
+    </li>
+    <li class="flex items-center space-x-2">
+      <input type="checkbox" class="form-checkbox text-blue-500">
+      <span class="text-white">Task 2</span>
+    </li>
+    <li class="flex items-center space-x-2">
+      <input type="checkbox" class="form-checkbox text-blue-500">
+      <span class="text-white">Task 3</span>
+    </li>
+  </ul>
+  <button class="bg-blue-500 text-white py-2 px-4 rounded">Add Task</button>
+</div>
+
+<!-- Calendar -->
+<div class="flex-1 bg-black bg-opacity-50 rounded-lg shadow-lg p-4 space-y-4 mt-4">
+  <h2 class="text-white text-xl font-semibold">Calendar</h2>
+  <div class="grid grid-cols-7 text-center text-white text-sm">
+    <div>Sun</div>
+    <div>Mon</div>
+    <div>Tue</div>
+    <div>Wed</div>
+    <div>Thu</div>
+    <div>Fri</div>
+    <div>Sat</div>
+  </div>
+  <div class="grid grid-cols-7 text-center text-white text-sm">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+    <div>17</div>
+    <div>18</div>
+    <div>19</div>
+    <div>20</div>
+    <div>21</div>
+    <div>22</div>
+    <div>23</div>
+    <div>24</div>
+    <div>25</div>
+    <div>26</div>
+    <div>27</div>
+    <div>28</div>
+    <div>29</div>
+    <div>30</div>
+    <div>31</div>
+  </div>
+</div>
+
+<!-- Productivity Metrics -->
+<div class="flex-1 bg-black bg-opacity-50 rounded-lg shadow-lg p-4 space-y-4 mt-4">
+  <h2 class="text-white text-xl font-semibold">Productivity Metrics</h2>
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <span class="text-white">Time spent on tasks: 2h 30m</span>
+  </div>
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <span class="text-white">Work sessions completed: 4</span>
+  </div>
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+    <span class="text-white">Email/messaging activity: 15</span>
+  </div>
+</div>
+
+<!-- Quick Access -->
+<div class="flex-1 bg-black bg-opacity-50 rounded-lg shadow-lg p-4 space-y-4 mt-4">
+  <h2 class="text-white text-xl font-semibold">Quick Access</h2>
+  <div class="flex space-x-2">
+    <button class="bg-blue-500 text-white py-2 px-4 rounded flex-1">App 1</button>
+    <button class="bg-blue-500 text-white py-2 px-4 rounded flex-1">App 2</button>
+  </div>
+  <div class="flex space-x-2 mt-2">
+    <button class="bg-blue-500 text-white py-2 px-4 rounded flex-1">Document 1</button>
+    <button class="bg-blue-500 text-white py-2 px-4 rounded flex-1">Document 2</button>
+  </div>
+</div>
+
+<!-- Contextual Assistance -->
+<div class="flex-1 bg-black bg-opacity-50 rounded-lg shadow-lg p-4 space-y-4 mt-4">
+  <h2 class="text-white text-xl font-semibold">Contextual Assistance</h2>
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <span class="text-white">Suggested app: Focus Booster</span>
+  </div>
+  <div class="flex items-center space-x-2 mt-2">
+    <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <span class="text-white">Reminder: Meeting at 3:00 PM</span>
+  </div>
+  <div class="flex items-center space-x-2 mt-2">
+    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+    <span class="text-white">Quick access: Email John</span>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

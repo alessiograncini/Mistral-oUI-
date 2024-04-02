@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen px-4">
+<!-- Room Overview -->
+<div class="w-full max-w-2xl mb-8 p-4 bg-black bg-opacity-50 shadow-2xl rounded-lg">
+  <h2 class="text-white text-xl font-semibold mb-4">Room Overview</h2>
+  <div class="grid grid-cols-3 gap-4">
+    <!-- TV -->
+    <div class="bg-black bg-opacity-75 p-2 rounded cursor-pointer hover:bg-opacity-100 transition duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tv text-white mx-auto w-10 h-10">
+        <rect x="1" y="3" width="15" height="11"></rect>
+        <path d="M17 16.5a2.5 2.5 0 0 1-5 0"></path>
+      </svg>
+    </div>
+    <!-- Chair -->
+    <div class="bg-black bg-opacity-75 p-2 rounded cursor-pointer hover:bg-opacity-100 transition duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home text-white mx-auto w-10 h-10">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+    </div>
+    <!-- More objects -->
+  </div>
+</div>
+
+<!-- TV Controls -->
+<div id="tv-controls" class="hidden w-full max-w-2xl mb-8 p-4 bg-black bg-opacity-50 shadow-2xl rounded-lg">
+  <h2 class="text-white text-xl font-semibold mb-4">TV Controls</h2>
+  <!-- Add TV controls here -->
+</div>
+
+<!-- Lighting Controls -->
+<div id="lighting-controls" class="hidden w-full max-w-2xl mb-8 p-4 bg-black bg-opacity-50 shadow-2xl rounded-lg">
+  <h2 class="text-white text-xl font-semibold mb-4">Lighting Controls</h2>
+  <!-- Add lighting controls here -->
+</div>
+
+<!-- Climate Controls -->
+<div id="climate-controls" class="hidden w-full max-w-2xl mb-8 p-4 bg-black bg-opacity-50 shadow-2xl rounded-lg">
+  <h2 class="text-white text-xl font-semibold mb-4">Climate Controls</h2>
+  <!-- Add climate controls here -->
+</div>
+
+<!-- Notifications and Reminders -->
+<div class="w-full max-w-2xl mb-8 p-4 bg-black bg-opacity-50 shadow-2xl rounded-lg">
+  <h2 class="text-white text-xl font-semibold mb-4">Notifications and Reminders</h2>
+  <!-- Add notifications and reminders here -->
+</div>
+</div>
+```
+</body>
+
+</html>

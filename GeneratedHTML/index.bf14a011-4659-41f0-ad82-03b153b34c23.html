@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col items-center justify-center h-screen w-screen bg-black bg-opacity-50">
+<!-- Task Manager -->
+<div class="w-full max-w-lg bg-black shadow-2xl rounded-lg p-6 mb-6">
+  <h2 class="text-white text-2xl font-semibold mb-4">Task Manager</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center bg-gray-800 rounded-lg p-2">
+      <input type="checkbox" class="text-green-500 focus:ring-0">
+      <label class="text-white ml-2">Task 1</label>
+    </li>
+    <li class="flex items-center bg-gray-800 rounded-lg p-2">
+      <input type="checkbox" class="text-green-500 focus:ring-0">
+      <label class="text-white ml-2">Task 2</label>
+    </li>
+  </ul>
+</div>
+
+<!-- Note-taking -->
+<div class="w-full max-w-lg bg-black shadow-2xl rounded-lg p-6 mb-6">
+  <h2 class="text-white text-2xl font-semibold mb-4">Notes</h2>
+  <textarea class="w-full h-32 bg-gray-800 text-white rounded-lg p-2 resize-none" placeholder="Write your notes here"></textarea>
+</div>
+
+<!-- Pomodoro Timer -->
+<div class="w-full max-w-lg bg-black shadow-2xl rounded-lg p-6 mb-6 flex items-center justify-center">
+  <div class="w-24 h-24 rounded-full bg-gray-800 flex items-center justify-center text-white text-5xl">
+    25:00
+  </div>
+</div>
+
+<!-- Focus Mode & Ambient Noise -->
+<div class="w-full max-w-lg bg-black shadow-2xl rounded-lg p-6 mb-6 flex items-center justify-between">
+  <div>
+    <h2 class="text-white text-2xl font-semibold">Focus Mode</h2>
+    <div class="flex items-center mt-2">
+      <input type="checkbox" id="focus-mode" class="text-green-500 focus:ring-0">
+      <label for="focus-mode" class="text-white ml-2">Enable</label>
+    </div>
+  </div>
+  <div>
+    <h2 class="text-white text-2xl font-semibold">Ambient Noise</h2>
+    <select class="bg-gray-800 text-white rounded-lg p-2 mt-2">
+      <option>White Noise</option>
+      <option>Nature Sounds</option>
+      <option>Cafe Ambience</option>
+    </select>
+  </div>
+</div>
+
+<!-- Notifications -->
+<div class="w-full max-w-lg bg-black shadow-2xl rounded-lg p-6">
+  <h2 class="text-white text-2xl font-semibold mb-4">Notifications</h2>
+  <ul class="space-y-2">
+    <li class="flex items-center bg-gray-800 rounded-lg p-2">
+      <span class="text-white">Upcoming event: Meeting with John at 2 PM</span>
+    </li>
+    <li class="flex items-center bg-gray-800 rounded-lg p-2">
+      <span class="text-white">New message from Sarah</span>
+    </li>
+  </ul>
+</div>
+</div>
+```
+</body>
+
+</html>

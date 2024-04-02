@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+<div class="flex flex-col h-screen w-screen bg-black">
+<!-- Media Controls -->
+<div class="flex justify-center items-center h-16 bg-black border-b border-gray-800">
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Play/Pause</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Volume</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded">Seek</button>
+</div>
+
+<!-- Productivity Tools -->
+<div class="flex-grow flex">
+  <!-- Word Processor -->
+  <div class="flex-1 p-4 border-r border-gray-800">
+    <textarea class="w-full h-full bg-black text-white resize-none"></textarea>
+  </div>
+
+  <!-- Calendar and To-Do List -->
+  <div class="flex-1 p-4">
+    <h2 class="text-white text-2xl mb-4">Calendar</h2>
+    <!-- Add calendar here -->
+    <h2 class="text-white text-2xl mt-4">To-Do List</h2>
+    <!-- Add to-do list here -->
+  </div>
+</div>
+
+<!-- Notification Center -->
+<div class="flex justify-center items-center h-16 bg-black border-t border-gray-800">
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Incoming Calls</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Messages</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded">Calendar Events</button>
+</div>
+
+<!-- Smart Home Controls -->
+<div class="flex justify-center items-center h-16 bg-black border-t border-gray-800">
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Lighting</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Temperature</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded">Connected Devices</button>
+</div>
+
+<!-- Quick Settings -->
+<div class="flex justify-center items-center h-16 bg-black border-t border-gray-800">
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Transparency</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Size</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded mr-2">Position</button>
+  <button class="bg-gray-800 text-white px-4 py-2 rounded">Modes</button>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col h-screen w-screen bg-black">
+<div class="flex flex-row justify-between px-4 py-2">
+  <div class="flex flex-row space-x-2">
+    <!-- Laptop controls -->
+    <div class="bg-gray-800 p-1 rounded shadow-md">
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <!-- Volume icon here -->
+        </svg>
+      </button>
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <!-- Brightness icon here -->
+        </svg>
+      </button>
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <!-- Screen sharing icon here -->
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="flex flex-row space-x-2">
+    <!-- Wireless connectivity -->
+    <div class="bg-gray-800 p-1 rounded shadow-md">
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <!-- Wi-Fi icon here -->
+        </svg>
+      </button>
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <!-- Bluetooth icon here -->
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="flex flex-row space-x-4 p-4">
+  <!-- Productivity tools -->
+  <div class="bg-gray-800 p-2 rounded shadow-md flex-grow">
+    <button class="bg-gray-700 text-white px-2 py-1 rounded w-full mb-2 focus:outline-none">
+      <svg class="h-5 w-5 inline mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <!-- Text editor icon here -->
+      </svg>
+      Text Editor
+    </button>
+    <button class="bg-gray-700 text-white px-2 py-1 rounded w-full mb-2 focus:outline-none">
+      <svg class="h-5 w-5 inline mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <!-- Web browser icon here -->
+      </svg>
+      Web Browser
+    </button>
+    <button class="bg-gray-700 text-white px-2 py-1 rounded w-full mb-2 focus:outline-none">
+      <svg class="h-5 w-5 inline mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <!-- Calendar icon here -->
+      </svg>
+      Calendar
+    </button>
+  </div>
+  <!-- Task manager -->
+  <div class="bg-gray-800 p-2 rounded shadow-md flex-grow">
+    <div>
+      <h2 class="text-white text-lg mb-2">CPU Usage</h2>
+      <div class="bg-gray-700 h-2 rounded"></div>
+    </div>
+    <div class="mt-4">
+      <h2 class="text-white text-lg mb-2">Memory Usage</h2>
+      <div class="bg-gray-700 h-2 rounded"></div>
+    </div>
+    <div class="flex flex-row justify-between mt-4">
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">Close App</button>
+      <button class="bg-gray-700 text-white px-2 py-1 rounded focus:outline-none">Force Quit</button>
+    </div>
+  </div>
+</div>
+<div class="absolute bottom-0 right-0 px-4 py-2">
+  <!-- Notifications -->
+  <div class="bg-gray-800 p-2 rounded shadow-md">
+    <h2 class="text-white text-lg mb-2">Notifications</h2>
+    <div class="flex flex-col space-y-2">
+      <div class="bg-gray-700 p-2 rounded">
+        <p class="text-white text-sm">Incoming email: New project proposal</p>
+      </div>
+      <div class="bg-gray-700 p-2 rounded">
+        <p class="text-white text-sm">Calendar event: Team meeting at 3 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>

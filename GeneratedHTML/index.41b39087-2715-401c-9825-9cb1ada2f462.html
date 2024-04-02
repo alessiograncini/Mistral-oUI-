@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black">
+```html
+<div class="flex flex-col h-screen w-screen p-4 bg-black">
+<!-- Device Controls -->
+<div class="flex flex-row justify-center mb-4">
+  <div class="bg-black bg-opacity-50 border border-gray-700 shadow-lg p-2 rounded">
+    <div class="flex flex-row justify-around space-x-2">
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Volume
+      </button>
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Brightness
+      </button>
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Power
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Application Switcher -->
+<div class="flex flex-row justify-center mb-4">
+  <div class="bg-black bg-opacity-50 border border-gray-700 shadow-lg p-2 rounded">
+    <div class="flex flex-row justify-around space-x-2">
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        App 1
+      </button>
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        App 2
+      </button>
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        App 3
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- File Manager -->
+<div class="flex flex-row justify-center mb-4">
+  <div class="bg-black bg-opacity-50 border border-gray-700 shadow-lg p-2 rounded">
+    <!-- Add SVG or placeholder for file manager icon -->
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+    </svg>
+    <div class="flex flex-col">
+      <a class="text-gray-300 hover:text-white text-sm mb-1">File 1</a>
+      <a class="text-gray-300 hover:text-white text-sm mb-1">File 2</a>
+      <a class="text-gray-300 hover:text-white text-sm mb-1">File 3</a>
+    </div>
+  </div>
+</div>
+
+<!-- Notifications -->
+<div class="flex flex-row justify-center mb-4">
+  <div class="bg-black bg-opacity-50 border border-gray-700 shadow-lg p-2 rounded">
+    <!-- Add SVG or placeholder for notification icon -->
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+    </svg>
+    <div class="flex flex-col">
+      <a class="text-gray-300 hover:text-white text-sm mb-1">Notification 1</a>
+      <a class="text-gray-300 hover:text-white text-sm mb-1">Notification 2</a>
+      <a class="text-gray-300 hover:text-white text-sm mb-1">Notification 3</a>
+    </div>
+  </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="flex flex-row justify-center">
+  <div class="bg-black bg-opacity-50 border border-gray-700 shadow-lg p-2 rounded">
+    <div class="flex flex-row justify-around space-x-2">
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Quick Action 1
+      </button>
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Quick Action 2
+      </button>
+      <button class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Quick Action 3
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+```
+</body>
+
+</html>
