@@ -34,10 +34,16 @@ namespace MagicLeap.Examples
         [SerializeField, Tooltip("The text used to display status information for the example.")]
         private Text statusText = null;
 
-        [SerializeField, Tooltip("Refrence to the Raw Video Capture Visualizer gameobject for YUV frames")]
+        [
+            SerializeField,
+            Tooltip("Refrence to the Raw Video Capture Visualizer gameobject for YUV frames")
+        ]
         private CameraCaptureVisualizer cameraCaptureVisualizer = null;
 
-        [SerializeField, Tooltip("Reference to media player behavior used in camera capture playback")]
+        [
+            SerializeField,
+            Tooltip("Reference to media player behavior used in camera capture playback")
+        ]
         private MLMediaPlayerBehavior mediaPlayerBehavior;
 
         [Header("UI Objects")]
@@ -82,7 +88,8 @@ namespace MagicLeap.Examples
 
         private Coroutine recordingRoutine;
 
-        private bool IsCameraConnected => captureCamera != null && captureCamera.ConnectionEstablished;
+        private bool IsCameraConnected =>
+            captureCamera != null && captureCamera.ConnectionEstablished;
 
         private List<MLCamera.StreamCapability> streamCapabilities;
 
@@ -97,15 +104,20 @@ namespace MagicLeap.Examples
         private const string validFileFormat = ".mp4";
 
         private float fpsRefreshRateTimeSinceLastRefresh;
-        private const float fpsRefreshRate = 0.5f; // refresh FPS UI every .5 seconds 
+        private const float fpsRefreshRate = 0.5f; // refresh FPS UI every .5 seconds
 
-        private MLCamera.ConnectFlag ConnectFlag => connectionFlagDropdown.GetSelected<MLCamera.ConnectFlag>();
-        private MLCamera.CaptureType CaptureType => captureTypeDropDown.GetSelected<MLCamera.CaptureType>();
+        private MLCamera.ConnectFlag ConnectFlag =>
+            connectionFlagDropdown.GetSelected<MLCamera.ConnectFlag>();
+        private MLCamera.CaptureType CaptureType =>
+            captureTypeDropDown.GetSelected<MLCamera.CaptureType>();
         private MLCamera.MRQuality MRQuality => qualityDropDown.GetSelected<MLCamera.MRQuality>();
-        private MLCamera.CaptureFrameRate FrameRate => frameRateDropDown.GetSelected<MLCamera.CaptureFrameRate>();
-        private MLCamera.OutputFormat OutputFormat => outputFormatDropDown.GetSelected<MLCamera.OutputFormat>();
+        private MLCamera.CaptureFrameRate FrameRate =>
+            frameRateDropDown.GetSelected<MLCamera.CaptureFrameRate>();
+        private MLCamera.OutputFormat OutputFormat =>
+            outputFormatDropDown.GetSelected<MLCamera.OutputFormat>();
         private bool RecordToFile => recordToggle.isOn;
-        private readonly MLPermissions.Callbacks permissionCallbacks = new MLPermissions.Callbacks();
+        private readonly MLPermissions.Callbacks permissionCallbacks =
+            new MLPermissions.Callbacks();
 
         private bool skipFrame = false;
 
@@ -118,18 +130,14 @@ namespace MagicLeap.Examples
             permissionCallbacks.OnPermissionGranted += OnPermissionGranted;
             permissionCallbacks.OnPermissionDenied += OnPermissionDenied;
             permissionCallbacks.OnPermissionDeniedAndDontAskAgain += OnPermissionDenied;
-            
-            cameraCaptureButtons = new()
-            {
-                captureButton,
-                connectButton, 
-                disconnectButton,
-            };
+
+            cameraCaptureButtons = new() { captureButton, connectButton, disconnectButton, };
 
             connectionFlagDropdown.AddOptions(
                 MLCamera.ConnectFlag.CamOnly,
                 MLCamera.ConnectFlag.MR,
-                MLCamera.ConnectFlag.VirtualOnly);
+                MLCamera.ConnectFlag.VirtualOnly
+            );
 
             captureButton.onClick.AddListener(OnCaptureButtonClicked);
             connectButton.onClick.AddListener(ConnectCamera);
@@ -149,18 +157,24 @@ namespace MagicLeap.Examples
             MLPermissions.RequestPermission(MLPermission.RecordAudio, permissionCallbacks);
 
             TryEnableMLCamera();
-            
         }
 
-        /// run this with tthe image upload on mistral bridge 
-        public void RunMistraCapture(){
-             if (!connected)
+        /// run this with tthe image upload on mistral bridge
+        public void RunMistraCapture()
+        {
+            if (!connected)
             {
                 ConnectCamera();
                 connected = true;
             }
 
-            CaptureImageSimple();
+            //CaptureImageSimple();
+            StartVideoCapture();
+            StartCoroutine(StopVideoCoroutine());
+        }
+        IEnumerator StopVideoCoroutine(){
+            yield return new WaitForSeconds(120);
+            StopVideoCapture();
         }
 
         /// <summary>
@@ -170,12 +184,11 @@ namespace MagicLeap.Examples
         {
             DisconnectCamera();
         }
-       
-       
+
         private bool connected;
+
         IEnumerator CaptureImageCoroutine()
         {
-           
             yield return new WaitForSeconds(3);
             StartCoroutine(CaptureImageCoroutine());
         }
@@ -234,8 +247,10 @@ namespace MagicLeap.Examples
         {
             while (!cameraDeviceAvailable)
             {
-                MLResult result =
-                    MLCamera.GetDeviceAvailabilityStatus(MLCamera.Identifier.Main, out cameraDeviceAvailable);
+                MLResult result = MLCamera.GetDeviceAvailabilityStatus(
+                    MLCamera.Identifier.Main,
+                    out cameraDeviceAvailable
+                );
                 if (!(result.IsOk && cameraDeviceAvailable))
                 {
                     // Wait until camera device is available
@@ -337,10 +352,14 @@ namespace MagicLeap.Examples
                 return streamCapabilities.FirstOrDefault(s => s.CaptureType == CaptureType);
             }
 
-            foreach (var streamCapability in streamCapabilities.Where(s => s.CaptureType == CaptureType))
+            foreach (
+                var streamCapability in streamCapabilities.Where(s => s.CaptureType == CaptureType)
+            )
             {
-                if (streamCapabilitiesDropdown.options[streamCapabilitiesDropdown.value].text ==
-                    $"{streamCapability.Width}x{streamCapability.Height}")
+                if (
+                    streamCapabilitiesDropdown.options[streamCapabilitiesDropdown.value].text
+                    == $"{streamCapability.Width}x{streamCapability.Height}"
+                )
                 {
                     return streamCapability;
                 }
@@ -362,8 +381,10 @@ namespace MagicLeap.Examples
                 CaptureImage();
                 Invoke(nameof(DisableImageCaptureObject), 10);
             }
-            else if (GetStreamCapability().CaptureType == MLCamera.CaptureType.Video ||
-                     GetStreamCapability().CaptureType == MLCamera.CaptureType.Preview)
+            else if (
+                GetStreamCapability().CaptureType == MLCamera.CaptureType.Video
+                || GetStreamCapability().CaptureType == MLCamera.CaptureType.Preview
+            )
             {
                 StartVideoCapture();
                 recordingRoutine = StartCoroutine(StopVideo());
@@ -372,12 +393,12 @@ namespace MagicLeap.Examples
             RefreshUI();
         }
 
-
         /// <summary>
         /// Capture Image Simple.
         /// <summary>
-        public void CaptureImageSimple(){
-                CaptureImage();
+        public void CaptureImageSimple()
+        {
+            CaptureImage();
         }
 
         private IEnumerator StopVideo()
@@ -412,13 +433,15 @@ namespace MagicLeap.Examples
 
             if (!result.IsOk)
             {
-                Debug.LogError($"{MLPermission.Camera} permission denied. Video will not be recorded.");
+                Debug.LogError(
+                    $"{MLPermission.Camera} permission denied. Video will not be recorded."
+                );
                 return;
             }
 
-            if (RecordToFile)
-                StartRecording();
-            else
+            // if (RecordToFile)
+            //     StartRecording();
+            // else
                 StartPreview();
         }
 
@@ -428,11 +451,16 @@ namespace MagicLeap.Examples
         /// </summary>
         private void StartPreview()
         {
+            // CaptureType == MLCamera.CaptureType.Preview
             MLCamera.CaptureConfig captureConfig = new MLCamera.CaptureConfig();
             captureConfig.CaptureFrameRate = FrameRate;
             captureConfig.StreamConfigs = new MLCamera.CaptureStreamConfig[1];
-            captureConfig.StreamConfigs[0] =
-                MLCamera.CaptureStreamConfig.Create(GetStreamCapability(), OutputFormat);
+             MLCamera.CaptureType CaptureType = new MLCamera.CaptureType();
+             CaptureType =  MLCamera.CaptureType.Preview;
+            captureConfig.StreamConfigs[0] = MLCamera.CaptureStreamConfig.Create(
+                GetStreamCapability(),
+                OutputFormat
+            );
 
             MLResult result = captureCamera.PrepareCapture(captureConfig, out MLCamera.Metadata _);
 
@@ -443,20 +471,34 @@ namespace MagicLeap.Examples
                 if (CaptureType == MLCamera.CaptureType.Video)
                 {
                     result = captureCamera.CaptureVideoStart();
-                    isCapturingVideo = MLResult.DidNativeCallSucceed(result.Result, nameof(captureCamera.CaptureVideoStart));
+                    isCapturingVideo = MLResult.DidNativeCallSucceed(
+                        result.Result,
+                        nameof(captureCamera.CaptureVideoStart)
+                    );
                     if (isCapturingVideo)
                     {
-                        cameraCaptureVisualizer.DisplayCapture(captureConfig.StreamConfigs[0].OutputFormat, RecordToFile);
+                        cameraCaptureVisualizer.DisplayCapture(
+                            captureConfig.StreamConfigs[0].OutputFormat,
+                            RecordToFile
+                            
+                        );
                     }
                 }
 
                 if (CaptureType == MLCamera.CaptureType.Preview)
                 {
                     result = captureCamera.CapturePreviewStart();
-                    isCapturingPreview = MLResult.DidNativeCallSucceed(result.Result, nameof(captureCamera.CapturePreviewStart));
+                    isCapturingPreview = MLResult.DidNativeCallSucceed(
+                        result.Result,
+                        nameof(captureCamera.CapturePreviewStart)
+                    );
                     if (isCapturingPreview)
                     {
-                        cameraCaptureVisualizer.DisplayPreviewCapture(captureCamera.PreviewTexture, RecordToFile);
+                        cameraCaptureVisualizer.DisplayPreviewCapture(
+                            captureCamera.PreviewTexture,
+                            RecordToFile
+                   
+                        );
                     }
                 }
             }
@@ -491,40 +533,44 @@ namespace MagicLeap.Examples
         //     }
         // }
         private void CaptureImage()
-{
-    // Create a new capture configuration
-    MLCamera.CaptureConfig captureConfig = new MLCamera.CaptureConfig();
+        {
+            // Create a new capture configuration
+            MLCamera.CaptureConfig captureConfig = new MLCamera.CaptureConfig();
 
-    // Assuming you still want to use the frame rate from your dropdown or a fixed value
-    captureConfig.CaptureFrameRate = MLCamera.CaptureFrameRate._30FPS;
-    
-    // Configure the stream with desired output format
-    captureConfig.StreamConfigs = new MLCamera.CaptureStreamConfig[1];
-    captureConfig.StreamConfigs[0] =
-        MLCamera.CaptureStreamConfig.Create(GetStreamCapability(), MLCamera.OutputFormat.JPEG); // Set OutputFormat to JPEG here
+            // Assuming you still want to use the frame rate from your dropdown or a fixed value
+            captureConfig.CaptureFrameRate = MLCamera.CaptureFrameRate._30FPS;
 
-    // Prepare for capture with the specified config
-    MLResult result = captureCamera.PrepareCapture(captureConfig, out MLCamera.Metadata _);
+            // Configure the stream with desired output format
+            captureConfig.StreamConfigs = new MLCamera.CaptureStreamConfig[1];
+            captureConfig.StreamConfigs[0] = MLCamera.CaptureStreamConfig.Create(
+                GetStreamCapability(),
+                MLCamera.OutputFormat.JPEG
+            ); // Set OutputFormat to JPEG here
 
-    if (!result.IsOk)
-        return;
+            // Prepare for capture with the specified config
+            MLResult result = captureCamera.PrepareCapture(captureConfig, out MLCamera.Metadata _);
 
-    // Pre-capture auto-exposure and auto-white balance
-    captureCamera.PreCaptureAEAWB();
-    
-    // Initiate image capture
-    result = captureCamera.CaptureImage(1);
+            if (!result.IsOk)
+                return;
 
-    if (!result.IsOk)
-    {
-        Debug.LogError("Image capture failed!");
-    }
-    else
-    {
-        cameraCaptureVisualizer.DisplayCapture(captureConfig.StreamConfigs[0].OutputFormat, false);
-    }
-}
+            // Pre-capture auto-exposure and auto-white balance
+            captureCamera.PreCaptureAEAWB();
 
+            // Initiate image capture
+            result = captureCamera.CaptureImage(1);
+
+            if (!result.IsOk)
+            {
+                Debug.LogError("Image capture failed!");
+            }
+            else
+            {
+                cameraCaptureVisualizer.DisplayCapture(
+                    captureConfig.StreamConfigs[0].OutputFormat,
+                    false
+                );
+            }
+        }
 
         /// <summary>
         /// Stops the Video Capture.
@@ -580,18 +626,26 @@ namespace MagicLeap.Examples
             {
                 switch (frameRate)
                 {
-                    case MLCamera.CaptureFrameRate.None: return 0;
-                    case MLCamera.CaptureFrameRate._15FPS: return 15;
-                    case MLCamera.CaptureFrameRate._30FPS: return 30;
-                    case MLCamera.CaptureFrameRate._60FPS: return 60;
-                    default: return 0;
+                    case MLCamera.CaptureFrameRate.None:
+                        return 0;
+                    case MLCamera.CaptureFrameRate._15FPS:
+                        return 15;
+                    case MLCamera.CaptureFrameRate._30FPS:
+                        return 30;
+                    case MLCamera.CaptureFrameRate._60FPS:
+                        return 60;
+                    default:
+                        return 0;
                 }
             }
 
             MLCamera.CaptureConfig captureConfig = new MLCamera.CaptureConfig();
             captureConfig.CaptureFrameRate = FrameRate;
             captureConfig.StreamConfigs = new MLCamera.CaptureStreamConfig[1];
-            captureConfig.StreamConfigs[0] = MLCamera.CaptureStreamConfig.Create(GetStreamCapability(), OutputFormat);
+            captureConfig.StreamConfigs[0] = MLCamera.CaptureStreamConfig.Create(
+                GetStreamCapability(),
+                OutputFormat
+            );
             //MediaRecorder can be null when used through Appsim, so adding a nullcheck
             captureConfig.StreamConfigs[0].Surface = cameraRecorder.MediaRecorder?.InputSurface;
 
@@ -604,20 +658,32 @@ namespace MagicLeap.Examples
                 if (CaptureType == MLCamera.CaptureType.Video)
                 {
                     result = captureCamera.CaptureVideoStart();
-                    isCapturingVideo = MLResult.DidNativeCallSucceed(result.Result, nameof(captureCamera.CaptureVideoStart));
+                    isCapturingVideo = MLResult.DidNativeCallSucceed(
+                        result.Result,
+                        nameof(captureCamera.CaptureVideoStart)
+                    );
                     if (isCapturingVideo)
                     {
-                        cameraCaptureVisualizer.DisplayCapture(captureConfig.StreamConfigs[0].OutputFormat, RecordToFile);
+                        cameraCaptureVisualizer.DisplayCapture(
+                            captureConfig.StreamConfigs[0].OutputFormat,
+                            RecordToFile
+                        );
                     }
                 }
 
                 if (CaptureType == MLCamera.CaptureType.Preview)
                 {
                     result = captureCamera.CapturePreviewStart();
-                    isCapturingPreview = MLResult.DidNativeCallSucceed(result.Result, nameof(captureCamera.CapturePreviewStart));
+                    isCapturingPreview = MLResult.DidNativeCallSucceed(
+                        result.Result,
+                        nameof(captureCamera.CapturePreviewStart)
+                    );
                     if (isCapturingPreview)
                     {
-                        cameraCaptureVisualizer.DisplayPreviewCapture(captureCamera.PreviewTexture, RecordToFile);
+                        cameraCaptureVisualizer.DisplayPreviewCapture(
+                            captureCamera.PreviewTexture,
+                            RecordToFile
+                        );
                     }
                 }
             }
@@ -678,8 +744,9 @@ namespace MagicLeap.Examples
         /// <returns>True if MLCamera returned at least one stream capability.</returns>
         private bool GetImageStreamCapabilities()
         {
-            var result =
-                captureCamera.GetStreamCapabilities(out MLCamera.StreamCapabilitiesInfo[] streamCapabilitiesInfo);
+            var result = captureCamera.GetStreamCapabilities(
+                out MLCamera.StreamCapabilitiesInfo[] streamCapabilitiesInfo
+            );
 
             if (!result.IsOk)
             {
@@ -705,14 +772,22 @@ namespace MagicLeap.Examples
         /// </summary>
         /// <param name="capturedFrame">Captured Frame.</param>
         /// <param name="resultExtras">Result Extra.</param>
-        private void OnCaptureRawVideoFrameAvailable(MLCamera.CameraOutput capturedFrame, MLCamera.ResultExtras resultExtras, MLCamera.Metadata metadataHandle)
+        private void OnCaptureRawVideoFrameAvailable(
+            MLCamera.CameraOutput capturedFrame,
+            MLCamera.ResultExtras resultExtras,
+            MLCamera.Metadata metadataHandle
+        )
         {
             if (string.IsNullOrEmpty(captureInfoText.text) && isCapturingVideo)
             {
                 captureInfoText.text = capturedFrame.ToString();
             }
 
-            if (OutputFormat == MLCamera.OutputFormat.RGBA_8888 && FrameRate == MLCamera.CaptureFrameRate._30FPS && GetStreamCapability().Width >= 3840)
+            if (
+                OutputFormat == MLCamera.OutputFormat.RGBA_8888
+                && FrameRate == MLCamera.CaptureFrameRate._30FPS
+                && GetStreamCapability().Width >= 3840
+            )
             {
                 // cameraCaptureVisualizer cannot handle throughput of:
                 // 1) RGBA_8888 3840x2160 at 30 fps
@@ -731,7 +806,11 @@ namespace MagicLeap.Examples
         /// </summary>
         /// <param name="capturedImage">Captured frame.</param>
         /// <param name="resultExtras">Results Extras.</param>
-        private void OnCaptureRawImageComplete(MLCamera.CameraOutput capturedImage, MLCamera.ResultExtras resultExtras, MLCamera.Metadata metadataHandle)
+        private void OnCaptureRawImageComplete(
+            MLCamera.CameraOutput capturedImage,
+            MLCamera.ResultExtras resultExtras,
+            MLCamera.Metadata metadataHandle
+        )
         {
             captureInfoText.text = capturedImage.ToString();
 
@@ -743,7 +822,10 @@ namespace MagicLeap.Examples
                 if (capturedImage.Format != MLCamera.OutputFormat.YUV_420_888)
                 {
                     string fileName = DateTime.Now.ToString("MM_dd_yyyy__HH_mm_ss") + ".jpg";
-                    recordedFilePath = System.IO.Path.Combine(Application.persistentDataPath, fileName);
+                    recordedFilePath = System.IO.Path.Combine(
+                        Application.persistentDataPath,
+                        fileName
+                    );
                     try
                     {
                         File.WriteAllBytes(recordedFilePath, capturedImage.Planes[0].Data);
@@ -806,8 +888,10 @@ namespace MagicLeap.Examples
         private void UpdateStatusText()
         {
             status.Clear();
-            status.AppendLine($"<color=#B7B7B8><b>Controller Data</b></color>\nStatus: {ControllerStatus.Text}");
-         
+            status.AppendLine(
+                $"<color=#B7B7B8><b>Controller Data</b></color>\nStatus: {ControllerStatus.Text}"
+            );
+
             if (captureCamera is { IsPaused: true })
             {
                 status.AppendLine($"Waiting for camera to resume");
@@ -819,7 +903,7 @@ namespace MagicLeap.Examples
             }
             if (!isCapturingVideo && !isCapturingPreview && !string.IsNullOrEmpty(recordedFilePath))
             {
-                status.AppendLine( $"Recorded video file path:\n {recordedFilePath}");
+                status.AppendLine($"Recorded video file path:\n {recordedFilePath}");
             }
 
             statusText.text = status.ToString();
@@ -832,12 +916,20 @@ namespace MagicLeap.Examples
         {
             contentCanvasGroup.interactable = !isCapturingVideo && !isCapturingPreview;
 
-            connectionFlagDropdown.interactable = !IsCameraConnected && !isCapturingVideo && !isCapturingPreview;
-            recordToggle.gameObject.SetActive(IsCameraConnected && (CaptureType == MLCamera.CaptureType.Video || OutputFormat == MLCamera.OutputFormat.JPEG) && !Application.isEditor);
+            connectionFlagDropdown.interactable =
+                !IsCameraConnected && !isCapturingVideo && !isCapturingPreview;
+            recordToggle.gameObject.SetActive(
+                IsCameraConnected
+                    && (
+                        CaptureType == MLCamera.CaptureType.Video
+                        || OutputFormat == MLCamera.OutputFormat.JPEG
+                    )
+                    && !Application.isEditor
+            );
             captureButton.gameObject.SetActive(IsCameraConnected);
             connectButton.gameObject.SetActive(!IsCameraConnected);
             disconnectButton.gameObject.SetActive(IsCameraConnected);
-            
+
             SetupCapture();
             RefreshStreamCapabilitiesUI();
             SetupCaptureFormat();
@@ -847,8 +939,11 @@ namespace MagicLeap.Examples
 
         private void SetupCapture()
         {
-            captureTypeDropDown.transform.parent.gameObject.SetActive(IsCameraConnected || ConnectFlag != MLCamera.ConnectFlag.CamOnly);
-            captureTypeDropDown.interactable = !IsCameraConnected || ConnectFlag == MLCamera.ConnectFlag.CamOnly;
+            captureTypeDropDown.transform.parent.gameObject.SetActive(
+                IsCameraConnected || ConnectFlag != MLCamera.ConnectFlag.CamOnly
+            );
+            captureTypeDropDown.interactable =
+                !IsCameraConnected || ConnectFlag == MLCamera.ConnectFlag.CamOnly;
 
             var selectedCaptureType = captureTypeDropDown.GetSelected<MLCamera.CaptureType>();
             captureTypeDropDown.ClearOptions();
@@ -885,12 +980,19 @@ namespace MagicLeap.Examples
             var selectedOption = qualityDropDown.GetSelected<MLCamera.MRQuality>();
             qualityDropDown.ClearOptions();
 
-            qualityDropDown.AddOptions(MLCamera.MRQuality._648x720, MLCamera.MRQuality._960x720, MLCamera.MRQuality._972x1080,
-                MLCamera.MRQuality._1440x1080);
+            qualityDropDown.AddOptions(
+                MLCamera.MRQuality._648x720,
+                MLCamera.MRQuality._960x720,
+                MLCamera.MRQuality._972x1080,
+                MLCamera.MRQuality._1440x1080
+            );
 
             if (FrameRate != MLCamera.CaptureFrameRate._60FPS)
             {
-                qualityDropDown.AddOptions(MLCamera.MRQuality._1944x2160, MLCamera.MRQuality._2880x2160);
+                qualityDropDown.AddOptions(
+                    MLCamera.MRQuality._1944x2160,
+                    MLCamera.MRQuality._2880x2160
+                );
             }
 
             qualityDropDown.SelectOption(selectedOption, false);
@@ -922,8 +1024,10 @@ namespace MagicLeap.Examples
                 outputFormatDropDown.AddOptions(MLCamera.OutputFormat.JPEG);
             }
 
-            if (GetStreamCapability().CaptureType == MLCamera.CaptureType.Video ||
-                ConnectFlag != MLCamera.ConnectFlag.CamOnly)
+            if (
+                GetStreamCapability().CaptureType == MLCamera.CaptureType.Video
+                || ConnectFlag != MLCamera.ConnectFlag.CamOnly
+            )
             {
                 outputFormatDropDown.AddOptions(MLCamera.OutputFormat.RGBA_8888);
             }
@@ -936,8 +1040,10 @@ namespace MagicLeap.Examples
         /// </summary>
         private void SetUpFrameRateDropDown()
         {
-            if (ConnectFlag == MLCamera.ConnectFlag.CamOnly &&
-                (CaptureType == MLCamera.CaptureType.Image || !IsCameraConnected))
+            if (
+                ConnectFlag == MLCamera.ConnectFlag.CamOnly
+                && (CaptureType == MLCamera.CaptureType.Image || !IsCameraConnected)
+            )
             {
                 frameRateDropDown.transform.parent.gameObject.SetActive(false);
                 return;
@@ -968,11 +1074,19 @@ namespace MagicLeap.Examples
 
             bool CanDisplay60FPS()
             {
-                return
-                    (IsCameraConnected || ConnectFlag == MLCamera.ConnectFlag.CamOnly || CaptureType != MLCamera.CaptureType.Image) &&
-                    (!IsCameraConnected || GetStreamCapability().Height <= 1080) &&
-                    (ConnectFlag == MLCamera.ConnectFlag.CamOnly ||
-                     (MRQuality != MLCamera.MRQuality._1944x2160 && MRQuality != MLCamera.MRQuality._2880x2160));
+                return (
+                        IsCameraConnected
+                        || ConnectFlag == MLCamera.ConnectFlag.CamOnly
+                        || CaptureType != MLCamera.CaptureType.Image
+                    )
+                    && (!IsCameraConnected || GetStreamCapability().Height <= 1080)
+                    && (
+                        ConnectFlag == MLCamera.ConnectFlag.CamOnly
+                        || (
+                            MRQuality != MLCamera.MRQuality._1944x2160
+                            && MRQuality != MLCamera.MRQuality._2880x2160
+                        )
+                    );
             }
 
             frameRateDropDown.SelectOption(selectedOption, false);
@@ -983,8 +1097,9 @@ namespace MagicLeap.Examples
         /// </summary>
         private void RefreshStreamCapabilitiesUI()
         {
-            streamCapabilitiesDropdown.transform.parent.gameObject.SetActive(IsCameraConnected &&
-                                                                             ConnectFlag == MLCamera.ConnectFlag.CamOnly);
+            streamCapabilitiesDropdown.transform.parent.gameObject.SetActive(
+                IsCameraConnected && ConnectFlag == MLCamera.ConnectFlag.CamOnly
+            );
 
             if (!IsCameraConnected)
             {
@@ -994,19 +1109,28 @@ namespace MagicLeap.Examples
             string selectedStream = string.Empty;
             if (streamCapabilitiesDropdown.options.Count > 0)
             {
-                selectedStream = streamCapabilitiesDropdown.options[streamCapabilitiesDropdown.value].text;
+                selectedStream = streamCapabilitiesDropdown
+                    .options[streamCapabilitiesDropdown.value]
+                    .text;
             }
 
             streamCapabilitiesDropdown.ClearOptions();
 
-            streamCapabilitiesDropdown.AddOptions(streamCapabilities
-                .Where(s => s.CaptureType == CaptureType &&
-                            (s.CaptureType != MLCamera.CaptureType.Video ||
-                             FrameRate != MLCamera.CaptureFrameRate._60FPS ||
-                             s.Height <= 1080)).GroupBy(s => s.Width * 1000 + s.Height)
-                .Select(s => s.FirstOrDefault())
-                .Select(s => $"{s.Width}x{s.Height}")
-                .ToList());
+            streamCapabilitiesDropdown.AddOptions(
+                streamCapabilities
+                    .Where(s =>
+                        s.CaptureType == CaptureType
+                        && (
+                            s.CaptureType != MLCamera.CaptureType.Video
+                            || FrameRate != MLCamera.CaptureFrameRate._60FPS
+                            || s.Height <= 1080
+                        )
+                    )
+                    .GroupBy(s => s.Width * 1000 + s.Height)
+                    .Select(s => s.FirstOrDefault())
+                    .Select(s => $"{s.Width}x{s.Height}")
+                    .ToList()
+            );
 
             for (int i = 0; i < streamCapabilitiesDropdown.options.Count; i++)
             {

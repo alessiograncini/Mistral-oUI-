@@ -17,11 +17,12 @@ public class CaptureLLavaConnector : MonoBehaviour
     void Start()
     {
         StartCoroutine(MistralRecursive());
+        CameraCaptureExample.RunMistraCapture();
     }
 
     public IEnumerator MistralRecursive()
     {
-        CameraCaptureExample.RunMistraCapture();
+        //CameraCaptureExample.RunMistraCapture();
         yield return new WaitForSeconds(4);
         LLavaUnityBridge.UploadRecursive(ImageFeedbackUI.sprite.texture);
         StartCoroutine(MistralRecursive());

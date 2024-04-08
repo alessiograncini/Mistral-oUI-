@@ -47,7 +47,12 @@ namespace MagicLeap.Examples
         private byte[] yChannelBuffer;
         private byte[] uChannelBuffer;
         private byte[] vChannelBuffer;
-        private static readonly string[] samplerNamesYUV = new string[] { "_MainTex", "_UTex", "_VTex" };
+        private static readonly string[] samplerNamesYUV = new string[]
+        {
+            "_MainTex",
+            "_UTex",
+            "_VTex"
+        };
 
         private float currentAspectRatio;
 
@@ -60,28 +65,36 @@ namespace MagicLeap.Examples
         {
             if (_screenRendererYUV == null)
             {
-                Debug.LogError("Error: RawVideoCaptureVisualizer._screenRendererYUV is not set, disabling script.");
+                Debug.LogError(
+                    "Error: RawVideoCaptureVisualizer._screenRendererYUV is not set, disabling script."
+                );
                 enabled = false;
                 return;
             }
 
             if (_screenRendererRGB == null)
             {
-                Debug.LogError("Error: RawVideoCaptureVisualizer._screenRendererRGB is not set, disabling script.");
+                Debug.LogError(
+                    "Error: RawVideoCaptureVisualizer._screenRendererRGB is not set, disabling script."
+                );
                 enabled = false;
                 return;
             }
 
             if (_screenRendererJPEG == null)
             {
-                Debug.LogError("Error: RawVideoCaptureVisualizer._screenRendererJPEG is not set, disabling script.");
+                Debug.LogError(
+                    "Error: RawVideoCaptureVisualizer._screenRendererJPEG is not set, disabling script."
+                );
                 enabled = false;
                 return;
             }
 
             if (_recordingIndicator == null)
             {
-                Debug.LogError("Error: RawVideoCaptureVisualizer._recordingIndicator is not set, disabling script.");
+                Debug.LogError(
+                    "Error: RawVideoCaptureVisualizer._recordingIndicator is not set, disabling script."
+                );
                 enabled = false;
                 return;
             }
@@ -90,8 +103,10 @@ namespace MagicLeap.Examples
             _screenRendererRGB.enabled = false;
             _screenRendererJPEG.enabled = false;
         }
+
         public LLavaUnityBridge LLavaUnityBridge;
         public CaptureLLavaConnector CaptureLLavaConnector;
+
         /// <summary>
         /// Handles video capture being started.
         /// </summary>
@@ -110,9 +125,7 @@ namespace MagicLeap.Examples
             {
                 _screenRendererJPEG.enabled = true;
             }
-
         }
-
 
         public void DisplayPreviewCapture(RenderTexture texture, bool isRecording)
         {
@@ -127,14 +140,34 @@ namespace MagicLeap.Examples
             // Set the active RenderTexture to your renderTexture
             RenderTexture.active = texture;
 
-            Texture2D texture2D = new Texture2D(texture.width, texture.height, TextureFormat.RGB24, false);
+            Texture2D texture2D = new Texture2D(
+                texture.width,
+                texture.height,
+                TextureFormat.RGB24,
+                false
+            );
 
             // Apply the changes to the texture2D
             texture2D.Apply();
             // Update the texture with image data
             LLavaUnityBridge.ImageTest = texture2D;
-            // 
-            CaptureLLavaConnector.ImageFeedbackUI.sprite = Sprite.Create(texture2D, new Rect(0.0f, 0.0f, texture2D.width, texture2D.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+            // Update LLavaUnityBridge.ImageTest
+            LLavaUnityBridge.ImageTest = new Texture2D(
+                imageTexture.width,
+                imageTexture.height,
+                TextureFormat.RGB24,
+                true
+            ); // 'true' to enable mipmaps
+            Graphics.CopyTexture(imageTexture, LLavaUnityBridge.ImageTest);
+
+            // Create a sprite from imageTexture
+            CaptureLLavaConnector.ImageFeedbackUI.sprite = Sprite.Create(
+                imageTexture,
+                new Rect(0.0f, 0.0f, imageTexture.width, imageTexture.height),
+                new Vector2(0.5f, 0.5f),
+                100.0f
+            );
         }
 
         /// <summary>
@@ -167,7 +200,10 @@ namespace MagicLeap.Examples
         /// <param name="extras">Unused.</param>
         /// <param name="frameData">Contains raw frame bytes to manipulate.</param>
         /// <param name="frameMetadata">Unused.</param>
-        public void OnCaptureDataReceived(MLCamera.ResultExtras extras, MLCamera.CameraOutput frameData)
+        public void OnCaptureDataReceived(
+            MLCamera.ResultExtras extras,
+            MLCamera.CameraOutput frameData
+        )
         {
             if (alreadyCapturedDataThisFrame)
                 return;
@@ -179,10 +215,35 @@ namespace MagicLeap.Examples
             else if (frameData.Format == MLCamera.OutputFormat.YUV_420_888)
             {
                 MLCamera.FlipFrameVertically(ref frameData);
-                SetProperRatio((int)frameData.Planes[0].Width, (int)frameData.Planes[0].Height, _screenRendererYUV);
-                UpdateYUVTextureChannel(ref rawVideoTexturesYUV[0], frameData.Planes[0], _screenRendererYUV, samplerNamesYUV[0], ref yChannelBuffer, true);
-                UpdateYUVTextureChannel(ref rawVideoTexturesYUV[1], frameData.Planes[1], _screenRendererYUV, samplerNamesYUV[1], ref uChannelBuffer, false);
-                UpdateYUVTextureChannel(ref rawVideoTexturesYUV[2], frameData.Planes[2], _screenRendererYUV, samplerNamesYUV[2], ref vChannelBuffer, false);
+                SetProperRatio(
+                    (int)frameData.Planes[0].Width,
+                    (int)frameData.Planes[0].Height,
+                    _screenRendererYUV
+                );
+                UpdateYUVTextureChannel(
+                    ref rawVideoTexturesYUV[0],
+                    frameData.Planes[0],
+                    _screenRendererYUV,
+                    samplerNamesYUV[0],
+                    ref yChannelBuffer,
+                    true
+                );
+                UpdateYUVTextureChannel(
+                    ref rawVideoTexturesYUV[1],
+                    frameData.Planes[1],
+                    _screenRendererYUV,
+                    samplerNamesYUV[1],
+                    ref uChannelBuffer,
+                    false
+                );
+                UpdateYUVTextureChannel(
+                    ref rawVideoTexturesYUV[2],
+                    frameData.Planes[2],
+                    _screenRendererYUV,
+                    samplerNamesYUV[2],
+                    ref vChannelBuffer,
+                    false
+                );
             }
             else if (frameData.Format == MLCamera.OutputFormat.RGBA_8888)
             {
@@ -195,8 +256,6 @@ namespace MagicLeap.Examples
             StartCoroutine(ResetCapturedDataFlagAtEndOfFrame());
 
             alreadyCapturedDataThisFrame = true;
-
-
         }
 
         private void UpdateJPGTexture(MLCamera.PlaneInfo imagePlane, Renderer renderer)
@@ -214,23 +273,25 @@ namespace MagicLeap.Examples
                 SetProperRatio(imageTexture.width, imageTexture.height, _screenRendererJPEG);
 
                 renderer.material.mainTexture = imageTexture;
-
-                // Update LLavaUnityBridge.ImageTest
-                LLavaUnityBridge.ImageTest = new Texture2D(imageTexture.width, imageTexture.height, TextureFormat.RGB24, true); // 'true' to enable mipmaps
-                Graphics.CopyTexture(imageTexture, LLavaUnityBridge.ImageTest);
-
-                // Create a sprite from imageTexture
-                CaptureLLavaConnector.ImageFeedbackUI.sprite = Sprite.Create(imageTexture, new Rect(0.0f, 0.0f, imageTexture.width, imageTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
             }
         }
 
-
-        private void UpdateYUVTextureChannel(ref Texture2D channelTexture, MLCamera.PlaneInfo imagePlane,
-                                             Renderer renderer, string samplerName, ref byte[] newTextureChannel,
-                                             bool setTextureScale = false)
+        private void UpdateYUVTextureChannel(
+            ref Texture2D channelTexture,
+            MLCamera.PlaneInfo imagePlane,
+            Renderer renderer,
+            string samplerName,
+            ref byte[] newTextureChannel,
+            bool setTextureScale = false
+        )
         {
-            if (channelTexture != null &&
-                (channelTexture.width != imagePlane.Width || channelTexture.height != imagePlane.Height))
+            if (
+                channelTexture != null
+                && (
+                    channelTexture.width != imagePlane.Width
+                    || channelTexture.height != imagePlane.Height
+                )
+            )
             {
                 Destroy(channelTexture);
                 channelTexture = null;
@@ -240,14 +301,24 @@ namespace MagicLeap.Examples
             {
                 if (imagePlane.PixelStride == 2)
                 {
-                    channelTexture = new Texture2D((int)imagePlane.Width, (int)(imagePlane.Height), TextureFormat.RG16, false)
+                    channelTexture = new Texture2D(
+                        (int)imagePlane.Width,
+                        (int)(imagePlane.Height),
+                        TextureFormat.RG16,
+                        false
+                    )
                     {
                         filterMode = FilterMode.Bilinear
                     };
                 }
                 else
                 {
-                    channelTexture = new Texture2D((int)imagePlane.Width, (int)(imagePlane.Height), TextureFormat.Alpha8, false)
+                    channelTexture = new Texture2D(
+                        (int)imagePlane.Width,
+                        (int)(imagePlane.Height),
+                        TextureFormat.Alpha8,
+                        false
+                    )
                     {
                         filterMode = FilterMode.Bilinear
                     };
@@ -265,15 +336,23 @@ namespace MagicLeap.Examples
 
             if (imagePlane.Stride != actualWidth)
             {
-                if (newTextureChannel == null || newTextureChannel.Length != (actualWidth * imagePlane.Height))
+                if (
+                    newTextureChannel == null
+                    || newTextureChannel.Length != (actualWidth * imagePlane.Height)
+                )
                 {
                     newTextureChannel = new byte[actualWidth * imagePlane.Height];
                 }
 
                 for (int i = 0; i < imagePlane.Height; i++)
                 {
-                    Buffer.BlockCopy(imagePlane.Data, (int)(i * imagePlane.Stride), newTextureChannel,
-                        i * actualWidth, actualWidth);
+                    Buffer.BlockCopy(
+                        imagePlane.Data,
+                        (int)(i * imagePlane.Stride),
+                        newTextureChannel,
+                        i * actualWidth,
+                        actualWidth
+                    );
                 }
 
                 channelTexture.LoadRawTextureData(newTextureChannel);
@@ -286,12 +365,21 @@ namespace MagicLeap.Examples
             channelTexture.Apply();
         }
 
-        private void UpdateRGBTexture(ref Texture2D videoTextureRGB, MLCamera.PlaneInfo imagePlane, Renderer renderer)
+        private void UpdateRGBTexture(
+            ref Texture2D videoTextureRGB,
+            MLCamera.PlaneInfo imagePlane,
+            Renderer renderer
+        )
         {
             int actualWidth = (int)(imagePlane.Width * imagePlane.PixelStride);
 
-            if (videoTextureRGB != null &&
-                (videoTextureRGB.width != imagePlane.Width || videoTextureRGB.height != imagePlane.Height))
+            if (
+                videoTextureRGB != null
+                && (
+                    videoTextureRGB.width != imagePlane.Width
+                    || videoTextureRGB.height != imagePlane.Height
+                )
+            )
             {
                 Destroy(videoTextureRGB);
                 videoTextureRGB = null;
@@ -299,7 +387,12 @@ namespace MagicLeap.Examples
 
             if (videoTextureRGB == null)
             {
-                videoTextureRGB = new Texture2D((int)imagePlane.Width, (int)imagePlane.Height, TextureFormat.RGBA32, false);
+                videoTextureRGB = new Texture2D(
+                    (int)imagePlane.Width,
+                    (int)imagePlane.Height,
+                    TextureFormat.RGBA32,
+                    false
+                );
                 videoTextureRGB.filterMode = FilterMode.Bilinear;
 
                 Material material = renderer.material;
@@ -314,7 +407,13 @@ namespace MagicLeap.Examples
                 var newTextureChannel = new byte[actualWidth * imagePlane.Height];
                 for (int i = 0; i < imagePlane.Height; i++)
                 {
-                    Buffer.BlockCopy(imagePlane.Data, (int)(i * imagePlane.Stride), newTextureChannel, i * actualWidth, actualWidth);
+                    Buffer.BlockCopy(
+                        imagePlane.Data,
+                        (int)(i * imagePlane.Stride),
+                        newTextureChannel,
+                        i * actualWidth,
+                        actualWidth
+                    );
                 }
                 videoTextureRGB.LoadRawTextureData(newTextureChannel);
             }
