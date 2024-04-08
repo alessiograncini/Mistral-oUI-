@@ -17,12 +17,16 @@ public class CaptureLLavaConnector : MonoBehaviour
     void Start()
     {
         StartCoroutine(MistralRecursive());
-        CameraCaptureExample.RunMistraCapture();
     }
+
+    private bool recordStarted;
 
     public IEnumerator MistralRecursive()
     {
-        //CameraCaptureExample.RunMistraCapture();
+        // TODO:
+        // Get video frame here
+        // display it ImageFeedbackUI.sprite.texture
+        // CameraCaptureExample.DisplayLastCapturedFrameOnUI(ImageFeedbackUI);
         yield return new WaitForSeconds(4);
         LLavaUnityBridge.UploadRecursive(ImageFeedbackUI.sprite.texture);
         StartCoroutine(MistralRecursive());
@@ -34,37 +38,4 @@ public class CaptureLLavaConnector : MonoBehaviour
         ResponseText.text = LLavaUnityBridge.UpdateResponseConnector();
         FeedbackText.text = LLavaUnityBridge.UpdateFeedback();
     }
-
-    /*
-    /// <summary>
-    /// Start the capture process
-    /// </summary>
-
-    public void StartCapture()
-    {
-        StartCoroutine(CameraCaptureCoroutine());
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    public void LLMRequestSimple()
-    {
-        LLavaUnityBridge.UploadConnector();
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    public void LLMGetResponseSimple()
-    {
-        LLavaUnityBridge.GetResponseConnector();
-    }
-
-    public IEnumerator CameraCaptureCoroutine()
-    {
-        yield return new WaitForSeconds(3);
-        CameraCaptureExample.CaptureImageSimple();
-    }
-    */
 }
