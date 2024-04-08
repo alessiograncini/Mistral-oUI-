@@ -26,14 +26,17 @@ public class CaptureLLavaConnector : MonoBehaviour
         // TODO:
         // Get video frame here
         // display it ImageFeedbackUI.sprite.texture
-        // CameraCaptureExample.DisplayLastCapturedFrameOnUI(ImageFeedbackUI);
+
         yield return new WaitForSeconds(4);
-        LLavaUnityBridge.UploadRecursive(ImageFeedbackUI.sprite.texture);
+        if (ImageFeedbackUI.sprite!=null){
+              LLavaUnityBridge.UploadRecursive( ImageFeedbackUI.sprite.texture );
+        }
         StartCoroutine(MistralRecursive());
     }
 
     void Update()
     {
+  
         // always show response
         ResponseText.text = LLavaUnityBridge.UpdateResponseConnector();
         FeedbackText.text = LLavaUnityBridge.UpdateFeedback();

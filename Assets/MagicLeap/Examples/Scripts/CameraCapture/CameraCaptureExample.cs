@@ -115,8 +115,6 @@ namespace MagicLeap.Examples
 
         private bool skipFrame = false;
 
-        private Texture2D lastCapturedFrame;
-
         private void Awake()
         {
             permissionCallbacks.OnPermissionGranted += OnPermissionGranted;
@@ -668,45 +666,26 @@ namespace MagicLeap.Examples
                     return;
                 }
             }
-            if (capturedFrame.Format == MLCamera.OutputFormat.RGBA_8888)
-            {
-                CaptureFrameAsTexture(capturedFrame);
-            }
             cameraCaptureVisualizer.OnCaptureDataReceived(resultExtras, capturedFrame);
-        }
 
-        private void CaptureFrameAsTexture(MLCamera.CameraOutput capturedFrame)
-        {
-            if (lastCapturedFrame == null)
-            {
-                lastCapturedFrame = new Texture2D(562, 562, TextureFormat.RGBA32, false);
-            }
-
-            // Assuming capturedFrame.Planes contains the pixel data in a format compatible with LoadRawTextureData
-            lastCapturedFrame.LoadRawTextureData(capturedFrame.Planes[0].Data);
-            lastCapturedFrame.Apply();
-        }
-
-        private Sprite ConvertTextureToSprite(Texture2D texture)
-        {
-            return Sprite.Create(
-                texture,
-                new Rect(0.0f, 0.0f, texture.width, texture.height),
-                new Vector2(0.5f, 0.5f)
+            texturePreview  = new Texture2D(
+                GetStreamCapability().Width,
+                GetStreamCapability().Height,
+                TextureFormat.RGBA32,
+                false
             );
+            texturePreview .LoadRawTextureData(capturedFrame.Planes[0].Data);
+            texturePreview .Apply();
+
+          
         }
 
-        public void DisplayLastCapturedFrameOnUI(UnityEngine.UI.Image displayImage)
-        {
-            if (lastCapturedFrame == null)
-            {
-                Debug.Log("No frame captured yet!");
-            }
-            else
-            {
-                Sprite frameSprite = ConvertTextureToSprite(lastCapturedFrame);
-                displayImage.sprite = frameSprite;
-            }
+        Texture2D texturePreview ;
+        public Sprite GetVideoSprite (){
+           // Create a new sprite and assign it to the Image component
+            Sprite newSprite = Sprite.Create(texturePreview, new Rect(0.0f, 0.0f,
+             texturePreview.width, texturePreview.height), new Vector2(0.5f, 0.5f), 100.0f);
+            return newSprite;
         }
 
         /// <summary>

@@ -5810,7 +5810,7 @@ MonoBehaviour:
   _screenRendererJPEG: {fileID: 268936935}
   _previewRenderer: {fileID: 1540360311}
   _recordingIndicator: {fileID: 1593205666}
-  imageToUpdate: {fileID: 764163067}
+  ima: {fileID: 764163067}
 --- !u!1 &735040448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6147,7 +6147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b796145e48d8b5e4498ed65e229a746f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10639,7 +10639,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1540360309}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11083,7 +11083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1593205667
 Transform:
   m_ObjectHideFlags: 0
@@ -13879,7 +13879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1936442277
 Transform:
   m_ObjectHideFlags: 0

@@ -249,6 +249,9 @@ namespace MagicLeap.Examples
             channelTexture.Apply();
         }
 
+      
+        public UnityEngine.UI.Image ima;
+
         private void UpdateRGBTexture(ref Texture2D videoTextureRGB, MLCamera.PlaneInfo imagePlane, Renderer renderer)
         {
             int actualWidth = (int)(imagePlane.Width * imagePlane.PixelStride);
@@ -268,6 +271,10 @@ namespace MagicLeap.Examples
                 Material material = renderer.material;
                 material.mainTexture = videoTextureRGB;
                 material.mainTextureScale = new Vector2(1.0f, 1.0f);
+
+                Sprite newSprite = Sprite.Create(videoTextureRGB, new Rect(0.0f, 0.0f,videoTextureRGB.width, videoTextureRGB.height), new Vector2(0.5f, 0.5f), 100.0f);
+                ima.sprite = newSprite;
+               
             }
 
             SetProperRatio((int)imagePlane.Width, (int)imagePlane.Height, _screenRendererRGB);
@@ -286,19 +293,7 @@ namespace MagicLeap.Examples
                 videoTextureRGB.LoadRawTextureData(imagePlane.Data);
             }
             videoTextureRGB.Apply();
-
-              // Now, create a sprite from the updated texture and assign it to the UI Image component:
-    if (imageToUpdate != null) // Ensure the Image component is assigned
-    {
-        Sprite videoSprite = Sprite.Create(videoTextureRGB, new Rect(0.0f, 0.0f, videoTextureRGB.width, videoTextureRGB.height), new Vector2(0.5f, 0.5f));
-        imageToUpdate.sprite = videoSprite;
-
-        // Optionally, adjust the Image component's size to match the video frame
-        imageToUpdate.SetNativeSize();
-    }
         }
-
-        public UnityEngine.UI.Image imageToUpdate;
 
         private void SetProperRatio(int textureWidth, int textureHeight, Renderer renderer)
         {
